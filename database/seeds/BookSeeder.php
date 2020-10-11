@@ -407,6 +407,5 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->category = 4;
         $book->save();
 
-
     }
 }
