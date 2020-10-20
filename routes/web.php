@@ -24,5 +24,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => ['auth'], 'namespace' => 'Admin', 'prefix' => 'admin/management'], function () {
     Route::get('/', 'ManagementController@index')->name('management.index');
 
+    // UserController
+    Route::post('/users/search', 'UserController@searchByCode')->name('users.search');
+    Route::get('/users/storee', 'UserController@storee')->name('users.storee');
+    Route::resource('/users', 'UserController');
 
 });
