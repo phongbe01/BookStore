@@ -271,9 +271,15 @@
             </a>
         </li>
         <li>
-            <a href="{{route('users.index')}}">
+            <a href="{{route('users.index')}}" >
                 <span class="icon"><i class="fas fa-table"></i></span>
                 <span class="title">Bảng</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{route('publishers.index')}}">
+                <span class="icon"><i class="fas fa-table"></i></span>
+                <span class="title">Nhà Xuất Bản</span>
             </a>
         </li>
         <li>

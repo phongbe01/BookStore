@@ -10,6 +10,7 @@
     <!-- Google Font: Source Sans Pro -->
     @include('admin.layouts.style')
     @include('admin.layouts.js')
+
 </head>
 <body class="hold-transition sidebar-mini">
     <!-- Navbar -->

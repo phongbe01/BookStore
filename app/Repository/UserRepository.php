@@ -6,6 +6,7 @@ namespace App\Repository;
 
 use App\User;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UserRepository implements CommonRepository
 {
@@ -40,7 +41,7 @@ class UserRepository implements CommonRepository
             'lastname' => $request->lastname,
             'role' => $request->role,
             'email' => $request->email,
-            'password' => $request->password,
+            'password' => Hash::make($request->password),
         ];
         User::updateOrCreate($params);
     }
@@ -49,7 +50,11 @@ class UserRepository implements CommonRepository
     {
         // TODO: Implement update() method.
         $user = $this->findById($id);
-        $user->update($request->all());
+        $user->firstname = $request->firstname;
+        $user->lastname = $request->lastname;
+        $user->email = $request->email;
+        $user->role = $request->role;
+//        $user->update($request->only('firstname', 'lastname', 'email', 'role'));
         $user->save();
     }
 
@@ -71,7 +76,7 @@ class UserRepository implements CommonRepository
                 {
                     if ($param['value'] != null)
                     {
-                        $result->where($param['field'], 'like', '%' . $param['value'] . '%');
+                        $result->where($param['field'], 'like', $param['value'] . '%');
                     }
                 }
             }

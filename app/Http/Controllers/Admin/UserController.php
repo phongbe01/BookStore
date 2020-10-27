@@ -20,7 +20,6 @@ class UserController extends Controller
         $this->roleRepository = $roleRepository;
     }
 
-
     /**
      * Display a listing of the resource.
      *
@@ -46,14 +45,6 @@ class UserController extends Controller
         return response()->json(['key' => $users, 'lastIndex' => $lastIndex, 'count' =>$count]);
     }
 
-    public function paginator(Request $request)
-    {
-        $pageSize = $request->get('pageSize');
-        $pageNumber = $request->get('pageNumber');
-        $params = $request->get('params');
-    }
-
-
     /**
      * Show the form for creatinwebg a new resource.
      *
@@ -77,17 +68,17 @@ class UserController extends Controller
             'firstname' => 'bail|required|min:4',
             'lastname' => 'bail|required|min:4',
             'email' => 'bail|required|email',
-            'password' => 'bail|required|min:6',
+            'password' => 'bail|min:6',
             'role' => 'bail|required',
         ]);
         if ($validator->fails()) {
             return response()->json(['error' => $validator->errors()->all()]);
         } else {
             if ($request->id) {
-                $this->userRepository->update($request->all(), $request->id);
+                $this->userRepository->update($request, $request->id);
                 $users = $this->userRepository->list(10);
                 $count = $this->userRepository->getCount();
-                return response()->json(['success' => 'Update user.', 'users' => $users, 'count' => $count]);
+                return response()->json(['success' => 'Thay đổi thành công.', 'users' => $users, 'count' => $count,]);
             } else {
                 $this->userRepository->create($request);
                 $users = $this->userRepository->list(10);
@@ -137,10 +128,13 @@ class UserController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function destroy($id)
     {
-        //
+        $this->userRepository->delete($id);
+        $users = $this->userRepository->list(10);
+        $count = $this->userRepository->getCount();
+        return response()->json(['success' => 'Xóa tài khoản thành công.', 'users' => $users, 'count' => $count,]);
     }
 }

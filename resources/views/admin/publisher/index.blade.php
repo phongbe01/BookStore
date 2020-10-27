@@ -1,6 +1,5 @@
 @extends('admin.layouts.head')
 @section('content')
-    <!-- Main content -->
     <section class="content">
         <div class="alert alert-danger print-error-msg" style="display:none">
             <ul></ul>
@@ -8,7 +7,7 @@
         <div class=" m-2">
             <div class="row table-title ">
                 <div class="col-6">
-                    <h4>Tài khoản</h4>
+                    <h4>Nhà Xuất Bản</h4>
                 </div>
                 <div class="col-6 toolbar">
                     <div class="btn-toolbar btn-group" role="toolbar" style="float: right">
@@ -41,43 +40,29 @@
                         <tr style="display: flex; align-items: center">
                             <th class="id-column">ID</th>
                             <th class="action-column">Action</th>
-                            <th class="first-name-column">First Name</th>
-                            <th class="last-name-column">Last Name</th>
-                            <th class="role-column">Role</th>
-                            <th class="email-column">Email</th>
+                            <th class="publisher-name-column">Name</th>
+                            <th class="image-column">Image</th>
                         </tr>
                         <tr>
                             <th class="id-column"></th>
                             <th class="action-column"></th>
-                            <th class="first-name-column"><input type="text" class="input-search data-filter "
-                                                                 id="column_firstname"></th>
-                            <th class="last-name-column"><input type="text" class="input-search data-filter"
-                                                                id="column_lastname">
-                            </th>
-                            <th class="role-column">
-                                <select  id="column_role" class="input-search data-filter">
-                                    <option value="" selected></option>
-                                    @foreach($roles as $role)
-                                        <option value="{{$role->id}}">{{$role->rolename}}</option>
-                                    @endforeach
-                                </select>
-                            <th class="column_email-column"></th>
+                            <th class="name-column"><input type="text" class="input-search data-filter "
+                                                                 id="column_publisher_name"></th>
+                            <th class="column_image-column"></th>
                             </th>
                         </tr>
                         </thead>
                         <tbody class="data-table-body">
                         <div class="loading-table" style="display: none"></div>
-                        @foreach($users as $user)
+                        @foreach($publishers as $publisher)
                             <tr>
-                                <td class="id-column" data-id="{{$user->id}}">{{$user->id}}</td>
+                                <td class="id-column" data-id="{{$publisher->id}}">{{$publisher->id}}</td>
                                 <td class="action-column">
                                     <a href="javascript:void(0)"><span class="fas fa-pencil-alt lv-data-table-edit form-edit"></span></a>
                                     <a href="javascript:void(0)"><span class="far fa-trash-alt lv-data-table-trash form-delete"></span></a>
                                 </td>
-                                <td class="first-name-column">{{$user->firstname}}</td>
-                                <td class="last-name-column">{{$user->lastname}}</td>
-                                <td class="role-column">{{$user->role}}</td>
-                                <td class="email-column">{{$user->email}}</td>
+                                <td class="publisher-name-column">{{$publisher->publishname}}</td>
+                                <td class="image-column"><img src="{{asset('/' . $publisher->image)}}" alt="{{$publisher->image}}" style="width: 50px; height: 50px"></td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -85,7 +70,7 @@
                 </div>
                 <div class="row mt-2" style="justify-content: space-between">
                     <div class="col-3 ml-2">
-                        <span>Tổng kết quả <b id="total">{{$count}}</b></span>
+                        <span>Tổng kết quả <b id="total"></b></span>
                     </div>
                     <div class="col-6 page">
                         <div style="float:right; padding-right: 20px">
@@ -104,9 +89,4 @@
             </div>
         </div>
     </section>
-{{--    Modal  --}}
-    @include('admin.user.modal')
-{{--    --}}
-    <script src="{{asset('admin/usertable.js')}}" defer></script>
-
 @endsection

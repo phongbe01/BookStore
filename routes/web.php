@@ -26,7 +26,8 @@ Route::group(['middleware' => ['auth'], 'namespace' => 'Admin', 'prefix' => 'adm
 
     // UserController
     Route::post('/users/search', 'UserController@searchByCode')->name('users.search');
-    Route::get('/users/storee', 'UserController@storee')->name('users.storee');
+
     Route::resource('/users', 'UserController');
+    Route::resource('/publishers', 'PublisherController');
 
 });

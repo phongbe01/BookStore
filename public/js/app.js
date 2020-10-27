@@ -37272,7 +37272,11 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // import $ from 'jquery';
+// window.$ = window.jQuery = $;
+
+
+window.Jquery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 /***/ }),
 
