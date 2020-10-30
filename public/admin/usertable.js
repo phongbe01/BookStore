@@ -39,8 +39,22 @@ $(document).ready(function () {
         alert.fadeOut(9000);
     }
 
+    function hideAndShowErrorMessage(input, text) {
+        let parent = input.parents('.form-group');
+        let span = parent.find('.error_message');
+        input.addClass('error_border');
+        //show
+        span.html(text);
+        //hide
+        $(input).on('keyup', function () {
+            // span.css('display', 'none');
+            span.hide();
+            input.removeClass('error_border');
+        })
+    }
+
     function drawTable(arr) {
-        $('.data-table-body').html('');
+        $('.data-table-body').empty('');
         let user_data = '';
         $.each(arr, function () {
             user_data += '<tr class="">';
@@ -210,20 +224,6 @@ $(document).ready(function () {
         $('.toggle').on('click', function () {
             $('.navigation').toggleClass('active');
             $('.content-wrapper').toggleClass('active');
-        })
-    }
-
-    function hideAndShowErrorMessage(input, text) {
-        let parent = input.parents('.form-group');
-        let span = parent.find('.error_message');
-        input.addClass('error_border');
-        //show
-        span.html(text);
-        //hide
-        $(input).on('keyup', function () {
-            // span.css('display', 'none');
-            span.hide();
-            input.removeClass('error_border');
         })
     }
 

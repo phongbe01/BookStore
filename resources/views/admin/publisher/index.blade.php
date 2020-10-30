@@ -12,7 +12,7 @@
                 <div class="col-6 toolbar">
                     <div class="btn-toolbar btn-group" role="toolbar" style="float: right">
                         <div class="btn-group func mr-3" role="group" aria-label="First group">
-                            <button type="button" class="btn btn-plus " id="createNewUser"><i class="fas fa-plus" style="color: black"></i>
+                            <button type="button" class="btn btn-plus " id="createNewPublisher"><i class="fas fa-plus" style="color: black"></i>
                             </button>
                             <button type="button" class="btn "><i class="fas fa-upload mr-1"></i>Nhập
                             </button>
@@ -46,7 +46,7 @@
                         <tr>
                             <th class="id-column"></th>
                             <th class="action-column"></th>
-                            <th class="name-column"><input type="text" class="input-search data-filter "
+                            <th class="publisher-name-column"><input type="text" class="input-search data-filter "
                                                                  id="column_publisher_name"></th>
                             <th class="column_image-column"></th>
                             </th>
@@ -62,7 +62,7 @@
                                     <a href="javascript:void(0)"><span class="far fa-trash-alt lv-data-table-trash form-delete"></span></a>
                                 </td>
                                 <td class="publisher-name-column">{{$publisher->publishname}}</td>
-                                <td class="image-column"><img src="{{asset('/' . $publisher->image)}}" alt="{{$publisher->image}}" style="width: 50px; height: 50px"></td>
+                                <td class="image-column"><img src="{{asset('/storage/' . $publisher->image)}}" alt="{{$publisher->image}}" style="width: 50px; height: 50px"></td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -88,5 +88,9 @@
                 </div>
             </div>
         </div>
+        {{--    Modal  --}}
+        @include('admin.publisher.modal')
+        {{--    --}}
     </section>
+    <script src="{{asset('admin/publishertable.js')}}" defer></script>
 @endsection

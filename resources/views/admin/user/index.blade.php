@@ -13,7 +13,7 @@
                 <div class="col-6 toolbar">
                     <div class="btn-toolbar btn-group" role="toolbar" style="float: right">
                         <div class="btn-group func mr-3" role="group" aria-label="First group">
-                            <button type="button" class="btn btn-plus " id="createNewUser"><i class="fas fa-plus" style="color: black"></i>
+                            <button type="button" class="btn btn-plus " id="createNewUser" data-target="#ajaxModel"><i class="fas fa-plus" style="color: black"></i>
                             </button>
                             <button type="button" class="btn "><i class="fas fa-upload mr-1"></i>Nhập
                             </button>

@@ -24,12 +24,10 @@ class PublisherRepository implements CommonRepository
     public function create($request)
     {
         // TODO: Implement create() method.
-        $param = [
-            'publishname' => $request->publishname,
-            'image' => $request->image,
-        ];
-        Publisher::updateOrCreate($param);
-
+        $pub = new Publisher();
+        $pub->publishname = $request->publishname;
+        $pub->image = $request->file->store('/image/publisher', 'public');
+        $pub->save();
     }
 
     public function update($request, $id)
@@ -46,5 +44,13 @@ class PublisherRepository implements CommonRepository
         // TODO: Implement delete() method.
         $publisher = $this->findById($id);
         $publisher->delete();
+    }
+
+    public function storeImage($param)
+    {
+        if (request()->has('image'))
+        {
+            $param->image = request()->image->store('storage', 'public');
+        }
     }
 }
