@@ -11,20 +11,16 @@ class BookSeeder extends Seeder
      */
     public function run()
     {
-        //sach chinh tri
-
+        //sach chinht ri
         $book = new \App\Book();
         $book->title = '50 ý tưởng triết học';
-        $book->summary = 'Bàn về 50 chủ đề triết học thú vị, cuốn sách là một minh chứng cho thấy tri
-        ết học không hề khô khan, sách vở. Dù là những ý tưởng xưa cũ nhất hay hiện đại nhất, chúng đề
-        u rất gần gũi, có tầm ảnh hưởng, giúp chúng ta hiểu cách thế giới này tồn tại và cách chúng ta tri
-         nhận về nó.';
+        $book->summary = 'Bàn về 50 chủ đề triết học thú vị, cuốn sách là một minh chứng cho thấy triết học không hề khô khan, sách vở. Dù là những ý tưởng xưa cũ nhất hay hiện đại nhất, chúng đều rất gần gũi, có tầm ảnh hưởng, giúp chúng ta hiểu cách thế giới này tồn tại và cách chúng ta tri nhận về nó.';
         $book->image = 'image\book\chinhtri\50-y-tuong-triet-hoc_108132_1.jpg';
         $book->price = 120000;
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 3;
+        $book->categoryID = 3;
         $book->save();
 
         $book = new \App\Book();
@@ -35,7 +31,7 @@ class BookSeeder extends Seeder
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 3;
+        $book->categoryID = 3;
         $book->save();
 
         $book = new \App\Book();
@@ -46,7 +42,7 @@ class BookSeeder extends Seeder
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 3;
+        $book->categoryID = 3;
         $book->save();
 
         $book = new \App\Book();
@@ -57,7 +53,18 @@ class BookSeeder extends Seeder
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 3;
+        $book->categoryID = 3;
+        $book->save();
+
+        $book = new \App\Book();
+        $book->title = '50 ý tưởng triết học';
+        $book->summary = 'Bàn về 50 chủ đề triết học thú vị, cuốn sách là một minh chứng cho thấy triết học không hề khô khan, sách vở. Dù là những ý tưởng xưa cũ nhất hay hiện đại nhất, chúng đều rất gần gũi, có tầm ảnh hưởng, giúp chúng ta hiểu cách thế giới này tồn tại và cách chúng ta tri nhận về nó.';
+        $book->image = 'image\book\chinhtri\50-y-tuong-triet-hoc_108132_1.jpg';
+        $book->price = 120000;
+        $book->quantity = 30;
+        $book->authorID = App\Author::inRandomOrder()->first()->id;
+        $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
+        $book->categoryID = 3;
         $book->save();
 
         $book = new \App\Book();
@@ -68,7 +75,7 @@ class BookSeeder extends Seeder
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 3;
+        $book->categoryID = 3;
         $book->save();
 
         $book = new \App\Book();
@@ -79,7 +86,7 @@ class BookSeeder extends Seeder
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 3;
+        $book->categoryID = 3;
         $book->save();
 
         $book = new \App\Book();
@@ -90,9 +97,19 @@ class BookSeeder extends Seeder
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 3;
+        $book->categoryID = 3;
         $book->save();
 
+        $book = new \App\Book();
+        $book->title = '50 ý tưởng triết học';
+        $book->summary = 'Bàn về 50 chủ đề triết học thú vị, cuốn sách là một minh chứng cho thấy triết học không hề khô khan, sách vở. Dù là những ý tưởng xưa cũ nhất hay hiện đại nhất, chúng đều rất gần gũi, có tầm ảnh hưởng, giúp chúng ta hiểu cách thế giới này tồn tại và cách chúng ta tri nhận về nó.';
+        $book->image = 'image\book\chinhtri\50-y-tuong-triet-hoc_108132_1.jpg';
+        $book->price = 120000;
+        $book->quantity = 30;
+        $book->authorID = App\Author::inRandomOrder()->first()->id;
+        $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
+        $book->categoryID = 3;
+        $book->save();
 
         $book = new \App\Book();
         $book->title = 'Thiết lập tịnh độ';
@@ -102,35 +119,35 @@ class BookSeeder extends Seeder
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 3;
+        $book->categoryID = 3;
         $book->save();
 
         $book = new \App\Book();
         $book->title = 'Trò chuyện với vĩ nhân';
         $book->summary = '“Trò chuyện với vĩ nhân” tổng hợp những câu chuyện của thiền sư Osho về 20 triết gia, nhà tư tưởng, đạo sư lỗi lạc nhất lịch sử.
-        Danh sách những bậc vĩ nhân Osho bàn đến rất đa dạng: Ở phương Đông có Lão Tử, Trang Tử; phương Tây có Socrates, Pythagoras, J. Krishnamurtri, Heraclitus, những nhà lãnh đạo tôn giáo như Phật Thích Ca Mâu Ni, Bồ Đề Đạt Ma, Jesus Christ…';
+
+Danh sách những bậc vĩ nhân Osho bàn đến rất đa dạng: Ở phương Đông có Lão Tử, Trang Tử; phương Tây có Socrates, Pythagoras, J. Krishnamurtri, Heraclitus, những nhà lãnh đạo tôn giáo như Phật Thích Ca Mâu Ni, Bồ Đề Đạt Ma, Jesus Christ…';
         $book->image = 'image\book\chinhtri\tro-chuyen-voi-vi-nhan_108829_1.png';
         $book->price = 150000;
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 3;
+        $book->categoryID = 3;
         $book->save();
 
         $book = new \App\Book();
         $book->title = 'Từ bi';
         $book->summary = 'Từ bi là một thứ tình thương mát lành, là sự chia sẻ niềm vui của bản thân đến với vạn vật. Từ bi giúp ta trở thành đóa hoa sen, vượt lên vũng bùn của thế giới ham muốn, dục vọng và sự giận dữ.
-        Dẫn dắt người đọc qua câu chuyện về cuộc đời Đức Phật, Chúa Jesus và những hiểu biết về Thiền đạo, Osho đặt ra thách thức cho các giả định về từ bi là gì và gạt bỏ những sai lầm, định kiến, khám phá ý nghĩa thực sự ẩn sau đó.';
+Dẫn dắt người đọc qua câu chuyện về cuộc đời Đức Phật, Chúa Jesus và những hiểu biết về Thiền đạo, Osho đặt ra thách thức cho các giả định về từ bi là gì và gạt bỏ những sai lầm, định kiến, khám phá ý nghĩa thực sự ẩn sau đó.';
         $book->image = 'image\book\chinhtri\tu-bi_108846_1.jpg';
         $book->price = 120000;
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 3;
+        $book->categoryID = 3;
         $book->save();
 
         //sach kinh te
-
         $book = new \App\Book();
         $book->title = 'Cộng tác với kẻ thù';
         $book->summary = '“Trong Cộng tác với kẻ thù, Kahane giúp giải quyết một vấn đề cực kỳ quan trọng mà chúng ta phải đối diện hằng ngày: Làm thế nào để có thể cùng tiến bộ trong những tình huống chúng ta xung đột với nhau và không thể có chung tầm nhìn? Kahane đã thay đổi cách hành xử thông thường, kể cả cách hành xử của chính ông và đề xuất một phương pháp hợp tác mới, phù hợp hơn với bối cảnh khó khăn hiện thời của chúng ta.”';
@@ -139,7 +156,7 @@ class BookSeeder extends Seeder
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 2;
+        $book->categoryID = 2;
         $book->save();
 
         $book = new \App\Book();
@@ -150,7 +167,7 @@ class BookSeeder extends Seeder
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 2;
+        $book->categoryID = 2;
         $book->save();
 
         $book = new \App\Book();
@@ -164,7 +181,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 2;
+        $book->categoryID = 2;
         $book->save();
 
         $book = new \App\Book();
@@ -175,7 +192,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 2;
+        $book->categoryID = 2;
         $book->save();
 
         $book = new \App\Book();
@@ -186,7 +203,18 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 2;
+        $book->categoryID = 2;
+        $book->save();
+
+        $book = new \App\Book();
+        $book->title = 'Đường đến thành công';
+        $book->summary = 'Đường Đến Thành Công Đỉnh Cao - Những Lời Khuyên "Đắt Giá" Trong Kinh Doanh';
+        $book->image = 'image\book\kinhte\duong-den-thanh-cong-cua-jack-ma_50720_1.jpg';
+        $book->price = '80000';
+        $book->quantity = 30;
+        $book->authorID = App\Author::inRandomOrder()->first()->id;
+        $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
+        $book->categoryID = 2;
         $book->save();
 
         $book = new \App\Book();
@@ -197,18 +225,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 2;
-        $book->save();
-
-        $book = new \App\Book();
-        $book->title = 'Marketing Du Kích';
-        $book->summary = 'Khi Marketing du kích xuất bản lần đầu tiên vào năm 1983, Jay Levinson đã cách mạng hóa các chiến lược marketing cho giám đốc doanh nghiệp vừa và nhỏ bằng phương pháp "du kích" để tìm kiếm khách hàng của mình. Dựa trên hàng trăm ý tưởng đáng tin cậy và hiệu quả, triết lý của Jay Levinson mở ra một cách hiểu mới về thị phần và cách chiếm lĩnh. ';
-        $book->image = 'image\book\kinhte\marketing-remix-marketing-du-kich-cho-doanh-nghiep-tu-a-z_109109_1.jpg';
-        $book->price = '124000';
-        $book->quantity = 30;
-        $book->authorID = App\Author::inRandomOrder()->first()->id;
-        $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 2;
+        $book->categoryID = 2;
         $book->save();
 
         $book = new \App\Book();
@@ -219,18 +236,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 2;
-        $book->save();
-
-        $book = new \App\Book();
-        $book->title = 'Tôi Là Jack Ma';
-        $book->summary = 'Đây là cuốn sách không chỉ dành cho doanh nhân và chủ doanh nghiệp, mà còn cho cả những viên chức tiến thủ và những người trẻ khởi nghiệp. Không chỉ chứa đựng những gợi ý phong phú và tinh tế về kinh doanh, quản lý, chiến lược, tầm nhìn, cuốn sách còn bàn về cách xây dựng văn hóa doanh nghiệp, sức hút nhân cách và trách nhiệm xã hội.';
-        $book->image = 'image\book\kinhte\toi-la-jack-ma_45298_1.jpg';
-        $book->price = '89828';
-        $book->quantity = 30;
-        $book->authorID = App\Author::inRandomOrder()->first()->id;
-        $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 2;
+        $book->categoryID = 2;
         $book->save();
 
         $book = new \App\Book();
@@ -241,13 +247,10 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 2;
+        $book->categoryID = 2;
         $book->save();
 
-        //sach ky nang song
-
         //sach thieu nhi
-
         $book = new \App\Book();
         $book->title = 'Chúc mừng sinh nhật';
         $book->summary = 'Chúc Mừng Sinh Nhật!';
@@ -256,7 +259,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -267,30 +270,18 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
-        $book->title = 'Cùng Chơi Với Gấu Con - Nở Ra Nở Ra Rồi!';
-        $book->summary = 'Câu chuyện kể về hai bạn gấu trắng và gấu xám chơi và hỏi nhau rất nhiều câu hỏi về những vật xung quanh mình. Hoa nở, rồi héo…khóc rồi lại nín…tẽ ngã rồi đứng lên…mũi dài ra rồi ngắn lại…nhìn trộm rồi ẩn nấp…lặn dưới nước rồi lại ngẩng mặt lên…xếp hình rồi lại đổ nhào…mở ra rồi lại đóng vào…';
-        $book->image = 'image\book\thieunhi\no-ra-no-ra-roi-_105358_1.jpg';
-        $book->price = '31500';
+        $book->title = 'Chúc mừng sinh nhật';
+        $book->summary = 'Chúc Mừng Sinh Nhật!';
+        $book->image = 'image\book\thieunhi\chuc-mung-sinh-nhat_105372_1.jpg';
+        $book->price = '44000';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
-        $book->save();
-
-        $book = new \App\Book();
-        $book->title = 'Nước Cờ Hòa';
-        $book->summary = 'Có một vương quốc Cổ tích mang tên vương quốc cờ vua. Ở đó, các quân cờ biết đi lại và nói chuyện,
-        biết suy nghĩ và hành động, biết vỗ về yêu thương và hờn giận trách móc. Thật hạnh phúc là tất cả mọi thần dân trong vương quốc được sống trong khung cảnh tươi đẹp, thanh bình. Niềm hạnh phúc đó được xây dựng nền bởi những khối óc thông minh cùng trải tim nhân hậu, vị tha...';
-        $book->image = 'image\book\thieunhi\nuoc-co-hoa_106191_1.png';
-        $book->price = '59000';
-        $book->quantity = 30;
-        $book->authorID = App\Author::inRandomOrder()->first()->id;
-        $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -301,7 +292,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -312,7 +303,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         //sach tri thuc
@@ -325,7 +316,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = 3;
         $book->publisherID = 3;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -336,7 +327,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = 3;
         $book->publisherID = 3;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -347,7 +338,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = 3;
         $book->publisherID = 3;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -358,7 +349,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = 3;
         $book->publisherID = 3;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -369,7 +360,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = 3;
         $book->publisherID = 3;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -380,7 +371,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = 3;
         $book->publisherID = 3;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -391,10 +382,8 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = 3;
         $book->publisherID = 3;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
-
-        //sach van hoc
 
         $book = new \App\Book();
         $book->title = 'Chuyện Cũ Hà Nội';
@@ -404,7 +393,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -415,7 +404,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -428,7 +417,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -439,7 +428,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -450,7 +439,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -462,7 +451,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -473,7 +462,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -491,7 +480,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -504,7 +493,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -516,7 +505,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -527,7 +516,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -539,7 +528,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -553,7 +542,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -564,7 +553,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -575,7 +564,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -586,7 +575,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -597,7 +586,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -608,7 +597,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -619,7 +608,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -630,7 +619,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -641,7 +630,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -652,7 +641,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -663,7 +652,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -674,7 +663,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -685,7 +674,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -696,7 +685,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -707,7 +696,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -718,7 +707,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -729,7 +718,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
     }
 }
