@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,5 +30,8 @@ Route::group(['middleware' => ['auth'], 'namespace' => 'Admin', 'prefix' => 'adm
 
     Route::resource('/users', 'UserController');
     Route::resource('/publishers', 'PublisherController');
+    Route::resource('/authors', 'AuthorController');
+
+
 
 });

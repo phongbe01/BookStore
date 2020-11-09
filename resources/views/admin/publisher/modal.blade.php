@@ -19,6 +19,9 @@
                     <div class="form-group">
                         <label for="" class="col-sm-5">Image</label>
                         <div class="col-sm-12">
+                            <img id="showImage" class="pb-2"  src="" alt="" style="width: 120px; height: 120px; display: none;">
+                        </div>
+                        <div class="col-sm-12">
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" id="form_publisher_image"  name="file">
                                 <label class="custom-file-label" for="form_publisher_image" id="file-name">Choose file...</label>

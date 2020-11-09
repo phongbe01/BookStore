@@ -41,28 +41,26 @@
                             <th class="id-column">ID</th>
                             <th class="action-column">Action</th>
                             <th class="publisher-name-column">Name</th>
-                            <th class="image-column">Image</th>
                         </tr>
                         <tr>
                             <th class="id-column"></th>
                             <th class="action-column"></th>
                             <th class="publisher-name-column"><input type="text" class="input-search data-filter "
-                                                                 id="column_publisher_name"></th>
+                                                                     id="column_publisher_name"></th>
                             <th class="column_image-column"></th>
                             </th>
                         </tr>
                         </thead>
                         <tbody class="data-table-body">
                         <div class="loading-table" style="display: none"></div>
-                        @foreach($publishers as $publisher)
+                        @foreach($authors as $author)
                             <tr>
-                                <td class="id-column" data-id="{{$publisher->id}}">{{$publisher->id}}</td>
+                                <td class="id-column" data-id="{{$author->id}}">{{$author->id}}</td>
                                 <td class="action-column">
                                     <a href="javascript:void(0)"><span class="fas fa-pencil-alt lv-data-table-edit form-edit"></span></a>
                                     <a href="javascript:void(0)"><span class="far fa-trash-alt lv-data-table-trash form-delete"></span></a>
                                 </td>
-                                <td class="publisher-name-column">{{$publisher->publishname}}</td>
-                                <td class="image-column"><img src="{{asset('/storage/' . $publisher->image)}}" alt="{{$publisher->image}}" style="width: 50px; height: 50px"></td>
+                                <td class="publisher-name-column">{{$author->authorname}}</td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -89,8 +87,7 @@
             </div>
         </div>
         {{--    Modal  --}}
-        @include('admin.publisher.modal')
+{{--        @include('admin.publisher.modal')--}}
         {{--    --}}
     </section>
-    <script src="{{asset('admin/publishertable.js')}}" defer></script>
 @endsection
