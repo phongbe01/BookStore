@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Publisher;
 use App\Repository\PublisherRepository;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
