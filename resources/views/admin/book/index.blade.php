@@ -12,8 +12,7 @@
                 <div class="col-6 toolbar">
                     <div class="btn-toolbar btn-group" role="toolbar" style="float: right">
                         <div class="btn-group func mr-3" role="group" aria-label="First group">
-                            <button type="button" class="btn btn-plus " id="createNewPublisher"><i class="fas fa-plus"
-                                                                                                   style="color: black"></i>
+                            <button type="button" class="btn btn-plus " id="createNewBook"><i class="fas fa-plus" style="color: black"></i>
                             </button>
                             <button type="button" class="btn "><i class="fas fa-upload mr-1"></i>Nhập
                             </button>
@@ -39,22 +38,18 @@
                     <table class="data-table">
                         <thead class="data-table-head">
                         <tr style="display: flex; align-items: center">
-                            <th class="action-column" style="background: #dedede;"><span>Hành động</span></th>
-                            <th class="book-name-column" style="background: #dedede;"><span>Tên sách</span></th>
-                            <th class="price-column">Giá</th>
-                            <th class="quantity-column">Số lượng</th>
-                            <th class="author-name-column">Tác giả</th>
+                            <th class="action-column">Hành động</th>
+                            <th class="publisher-name-column">Tên sách</th>
+                            <th class="id-column">Giá</th>
+                            <th class="id-column">Số lượng</th>
+                            <th class="publisher-name-column">Tác giả</th>
                             <th class="publisher-name-column">Nhà xuất bản</th>
-                            <th class="category-name-column">Phân loại</th>
+                            <th class="publisher-name-column">Phân loại</th>
                         </tr>
                         <tr>
-                            <th class="action-column" style="padding: 0;">
-                                <div style="height: 40px; background: #dedede; width: 100%; "></div>
-                            </th>
-                            <th class="book-name-column" style="background: #dedede;padding: 2px; "><input type="text"
-                                                                                                         class="input-search data-filter "
-                                                                                                         id="column_title">
-                            </th>
+                            <th class="action-column"></th>
+                            <th class="publisher-name-column"><input type="text" class="input-search data-filter "
+                                                                     id="column_title"></th>
                             <th class="id-column">
                                 <input type="text" class="input-search data-filter "
                                        id="column_price">
@@ -63,8 +58,8 @@
                                 <input type="text" class="input-search data-filter "
                                        id="column_quantity">
                             </th>
-                            <th class="author-name-column">
-                                <select id="column_authorID" class="input-search data-filter">
+                            <th class="publisher-name-column">
+                                <select  id="column_authorID" class="input-search data-filter">
                                     <option value="" selected></option>
                                     @foreach($authors as $author)
                                         <option value="{{$author->id}}">{{$author->authorname}}</option>
@@ -72,14 +67,14 @@
                                 </select>
                             </th>
                             <th class="publisher-name-column">
-                                <select id="column_publisherID" class="input-search data-filter">
+                                <select  id="column_publisherID" class="input-search data-filter">
                                     <option value="" selected></option>
                                     @foreach($publishers as $publisher)
                                         <option value="{{$publisher->id}}">{{$publisher->publishname}}</option>
                                     @endforeach
                                 </select>
                             </th>
-                            <th class="category-name-column">
+                            <th class="publisher-name-column">
                                 <input type="text" class="input-search data-filter "
                                        id="column_category">
                             </th>
@@ -95,12 +90,12 @@
                                     <a href="javascript:void(0)"><span
                                             class="far fa-trash-alt lv-data-table-trash form-delete"></span></a>
                                 </td>
-                                <td class="book-name-column">{{$book->title}}</td>
-                                <td class="price-column">{{$book->price}}</td>
-                                <td class="quantity-column">{{$book->quantity}}</td>
-                                <td class="author-name-column">{{$book->author}}</td>
+                                <td class="publisher-name-column">{{$book->title}}</td>
+                                <td class="id-column">{{$book->price}}</td>
+                                <td class="id-column">{{$book->quantity}}</td>
+                                <td class="publisher-name-column">{{$book->author}}</td>
                                 <td class="publisher-name-column">{{$book->publisher}}</td>
-                                <td class="category-name-column">{{$book->category}}</td>
+                                <td class="publisher-name-column">{{$book->category}}</td>
                             </tr>
                         @endforeach
                         </tbody>

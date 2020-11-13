@@ -1,4 +1,7 @@
 $(document).ready(function() {
+
+    create();
+
     let first = 1;
     let last = 10;
     let pageNumber = 0;
@@ -46,7 +49,7 @@ $(document).ready(function() {
                 dataType: 'json',
                 data: {
                     params: array,
-                    pageSize: pageSize,
+                    pageSize: pageSize, 
                     pageNumber: 0,
                 },
                 url: '/admin/management/books/search',
@@ -60,7 +63,7 @@ $(document).ready(function() {
                 error: function () {
                 }
             });
-        }, 500);
+        }, 100);
     }
 
     $('.input-search').bind(' keyup change', function () {
@@ -169,6 +172,18 @@ $(document).ready(function() {
                 }
             }
         });
-
     })
+
+    function create()
+    {
+        $(document).on('click', '#createNewBook', function (e) {
+            $.get("books/create", function (data) {
+                let body = $('body');
+                body.html(data);
+                window.history.pushState("Details", "Title", "books/create");
+                // let form = $('#book-ajaxModel');
+                // form.modal('show');
+            })
+        })
+    }
 });

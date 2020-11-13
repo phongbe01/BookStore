@@ -84,7 +84,7 @@ class BookRepository implements CommonRepository
             {
                 if ($param['value'] != null)
                 {
-                    $result->where($param['field'], 'like',  $param['value'] . '%');
+                    $result->Where($param['field'], 'like',  $param['value'] . '%');
                 }
             }
         }

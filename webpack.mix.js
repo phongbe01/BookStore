@@ -11,5 +11,13 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
+mix.js('src/app.js', 'dist/')
+    .sass('src/app.scss', 'dist/');
+
+mix.js([
+    'resources/js/app.js',
+    'resources/js/bootstrap',
+    'public/admin/system.js',
+    'public/admin/booktable.js',
+], 'public/js')
     .sass('resources/sass/app.scss', 'public/css');

@@ -54,11 +54,12 @@ class BookController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Http\JsonResponse
      */
     public function create()
     {
-        return view('admin.book.create');
+        $html =  view('admin.book.create')->render();
+        return response()->json($html);
 
     }
 
