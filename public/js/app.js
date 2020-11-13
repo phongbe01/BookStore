@@ -37275,9 +37275,6 @@ module.exports = function(module) {
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // import $ from 'jquery';
 // window.$ = window.jQuery = $;
 
-
-window.Jquery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
