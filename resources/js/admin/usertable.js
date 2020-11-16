@@ -98,7 +98,7 @@ $(document).ready(function () {
                 url: '/admin/management/users/search',
                 success: function (data) {
                     if (data != null) {
-                        $('.loading-table').hide();
+                        // $('.loading-table').hide();
                         let users = data.key;
                         drawTable(users);
                         $('#total').html(data.count);
@@ -118,7 +118,7 @@ $(document).ready(function () {
         pageSize = $(this).parents('.card').find('#pageSize').val();
         first = 1;
         pageNumber = 0;
-        $('.loading-table').show();
+        // $('.loading-table').show();
         last = parseInt(pageSize);
         $('#first').text(first);
         $('#last').text(pageSize);

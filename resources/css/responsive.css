@@ -1,0 +1,9 @@
+/* Ipad */
+@media screen and(max-width: 769px) {
+    .id-column, .action-column {
+        width: 70px !important;
+        padding: 3px 0;
+    }
+
+}
+
