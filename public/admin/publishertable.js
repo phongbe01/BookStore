@@ -2,6 +2,29 @@ $(document).ready(function () {
     //create new publisher
     create();
 
+    //edit publisher
+    edit();
+
+    // displayImageToModal();
+
+    function readURL(input) {
+        if (input.files && input.files[0])
+        {
+            let reader = new FileReader();
+            reader.onload = function (e) {
+                console.log(e.target.result);
+                $('#publisherForm').find('#showImage').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    function displayImageToModal() {
+        $(document).on('change', '#form_publisher_image', function () {
+            $('#showImage').show();
+            readURL(this);
+        })
+    }
 
     function drawTable(arr) {
         $('.data-table-body').empty('');
@@ -39,7 +62,6 @@ $(document).ready(function () {
         alert.fadeOut(9000);
     }
 
-
     function create() {
         $(document).on('click', '#createNewPublisher', function (e) {
             $.get("publishers/create", function (data) {
@@ -47,8 +69,27 @@ $(document).ready(function () {
                 $('#publisherForm').trigger("reset");
                 $('#modelHeading').html("Create New Publisher");
                 $('#publisher-ajaxModel').modal('show');
+                $('#showImage').hide();
+                displayImageToModal();
             });
         });
+    }
+
+    function edit() {
+        $(document).on('click', '.form-edit', function (e) {
+            e.preventDefault();
+            let id = $(this).parents('tr').find('.id-column').data('id');
+            $.get("publishers/" + id + "/edit", function (data) {
+                let pub = data.publisher;
+                $('#saveBtn').html('edit-publisher');
+                $('#modelHeading').html("Edit Publisher");
+                $('#publisher-ajaxModel').modal('show');
+                $('#showImage').show();
+                $('#showImage').attr('src', '/storage/' + pub.image);
+                $('#form_publisher_name').val(pub.publishname);
+            });
+            $('#publisherForm').trigger("reset");
+        })
     }
 
     $(document).on('change', '#form_publisher_image', function () {
@@ -75,22 +116,12 @@ $(document).ready(function () {
     function validator() {
         let form = $('#publisherForm');
         let publisher_name = form.find('#form_publisher_name');
-        let image = form.find('#file-name');
         let check = 0;
 
         if (publisher_name != null) {
             if (publisher_name.val() == null || publisher_name.val() === '') {
                 hideAndShowErrorMessage(publisher_name, '* Tên không được để trống');
                 publisher_name.focus();
-                check = 1;
-            } else {
-                check = 0;
-            }
-        }
-        if (image != null) {
-            if (image.text() == null || image.text() === '') {
-                hideAndShowErrorMessage(image, '* Ảnh không được để trống');
-                image.focus();
                 check = 1;
             } else {
                 check = 0;
@@ -109,11 +140,7 @@ $(document).ready(function () {
         if (validator()) {
             let p = $('#publisherForm');
             let fd = new FormData(p[0]);
-            // fd.append('image', p.find('#form_publisher_image').val());
             $(this).text('Sending..');
-            // console.log(fd.get('image'));
-            console.log(fd.get('publishname'));
-            console.log(fd.get('file'));
             $.ajax({
                 data: fd,
                 url: "publishers",
@@ -132,7 +159,7 @@ $(document).ready(function () {
                         $('#total').html(data.count);
                         $('#pageSize').val(10);
                         $('#first').text(1);
-                        $('#last').text(10);
+                        $('#last').text(10)
                         pageNumber = 0;
                         alertMessage('success', data.success);
                     } else {

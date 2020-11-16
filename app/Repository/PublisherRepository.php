@@ -9,7 +9,14 @@ use App\Publisher;
 class PublisherRepository implements CommonRepository
 {
 
-    public function list($pageSize)
+
+    public function count()
+    {
+        return Publisher::count();
+    }
+
+
+    public function list($pageSize = null)
     {
         // TODO: Implement list() method.
         return Publisher::all();

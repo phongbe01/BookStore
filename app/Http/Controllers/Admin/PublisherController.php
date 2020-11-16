@@ -26,7 +26,8 @@ class PublisherController extends Controller
     public function index()
     {
         $publishers = $this->publisherRepository->list(10);
-        return view('admin.publisher.index')->with('publishers', $publishers);
+        $count = $this->publisherRepository->count();
+        return view('admin.publisher.index')->with(['publishers' => $publishers, 'count' => $count]);
 
     }
 
@@ -48,19 +49,25 @@ class PublisherController extends Controller
      */
     public function store(Request $request)
     {
-//        $pub = new Publisher();
-//        $pub->publishname = $request->publishname;
-//        $pub->image = $request->file->store('/image/publisher', 'public');
-//        $pub->save();
-//        return redirect()->route('publishers.index')->with('publishers', $this->publisherRepository->list(10));
-        if ($request->id) {
-            $this->publisherRepository->update($request, $request->id);
-            $publishers = $this->publisherRepository->list(10);
-            return response()->json(['success' => 'Thay đổi thành công.', 'users' => $publishers, 'count' => count($publishers),]);
-        } else {
-            $this->publisherRepository->create($request);
-            $publishers = $this->publisherRepository->list(10);
-            return response()->json(['success' => 'Tạo mới thành công.', 'publishers' => $publishers, 'count' => count($publishers)]);
+        $validator = Validator::make($request->all(), [
+            'publishname' => 'required',
+        ]);
+        if ($validator->fails())
+        {
+            return response()->json(['error' => $validator->errors()->all()]);
+        }
+        else
+        {
+            if ($request->id) {
+                $this->publisherRepository->update($request, $request->id);
+                $publishers = $this->publisherRepository->list(10);
+                return response()->json(['success' => 'Thay đổi thành công.', 'publishers' => $publishers, 'count' => count($publishers),]);
+            } else {
+                $this->publisherRepository->create($request);
+                $publishers = $this->publisherRepository->list(10);
+                $count = $this->publisherRepository->count();
+                return response()->json(['success' => 'Tạo mới thành công.', 'publishers' => $publishers, 'count' => $count]);
+            }
         }
 //        if ($validator->fails()) {
 //            return response()->json(['error' => $validator->errors()->all()]);
@@ -92,11 +99,12 @@ class PublisherController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function edit($id)
     {
-        //
+        $publisher = $this->publisherRepository->findById($id);
+        return response()->json(['publisher' => $publisher]);
     }
 
     /**

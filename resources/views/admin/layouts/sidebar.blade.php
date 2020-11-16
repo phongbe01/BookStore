@@ -283,6 +283,18 @@
             </a>
         </li>
         <li>
+            <a href="{{route('authors.index')}}">
+                <span class="icon"><i class="fas fa-table"></i></span>
+                <span class="title">Tác giả</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{route('books.index')}}">
+                <span class="icon"><i class="fas fa-table"></i></span>
+                <span class="title">Sách</span>
+            </a>
+        </li>
+        <li>
             <a href="">
                 <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
                 <span class="title">Đăng xuất</span>

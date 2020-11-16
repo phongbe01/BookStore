@@ -28,6 +28,12 @@ Route::group(['middleware' => ['auth'], 'namespace' => 'Admin', 'prefix' => 'adm
     Route::post('/users/search', 'UserController@searchByCode')->name('users.search');
 
     Route::resource('/users', 'UserController');
+
     Route::resource('/publishers', 'PublisherController');
+
+    Route::resource('/authors', 'AuthorController');
+
+    Route::post('/books/search', 'BookController@search')->name('books.search');
+    Route::resource('/books', 'BookController');
 
 });

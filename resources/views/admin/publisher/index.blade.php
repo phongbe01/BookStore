@@ -70,7 +70,7 @@
                 </div>
                 <div class="row mt-2" style="justify-content: space-between">
                     <div class="col-3 ml-2">
-                        <span>Tổng kết quả <b id="total"></b></span>
+                        <span>Tổng kết quả <b id="total">{{$count}}</b></span>
                     </div>
                     <div class="col-6 page">
                         <div style="float:right; padding-right: 20px">

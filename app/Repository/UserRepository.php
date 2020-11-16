@@ -54,7 +54,6 @@ class UserRepository implements CommonRepository
         $user->lastname = $request->lastname;
         $user->email = $request->email;
         $user->role = $request->role;
-//        $user->update($request->only('firstname', 'lastname', 'email', 'role'));
         $user->save();
     }
 
