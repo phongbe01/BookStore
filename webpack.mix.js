@@ -17,7 +17,8 @@ mix.js('src/app.js', 'dist/')
 mix.js([
     'resources/js/app.js',
     'resources/js/bootstrap',
-    'public/admin/system.js',
-    'public/admin/booktable.js',
 ], 'public/js')
     .sass('resources/sass/app.scss', 'public/css');
+
+mix.minify('public/js/app.js');
+
