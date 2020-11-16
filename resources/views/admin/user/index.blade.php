@@ -66,7 +66,7 @@
                         </tr>
                         </thead>
                         <tbody class="data-table-body">
-                        <div class="loading-table" style="display: none"></div>
+{{--                        <div class="loading-table" style="display: none"></div>--}}
                         @foreach($users as $user)
                             <tr>
                                 <td class="id-column" data-id="{{$user->id}}">{{$user->id}}</td>

@@ -1,4 +1,4 @@
-<script src="{{asset('js/app.js')}}" defer></script>
-<script src="{{asset('admin/system.js')}}" defer></script>
+{{--<script src="{{assets('js/app.js')}}" defer></script>--}}
+<script src="{{mix('/js/app.js')}}" defer></script>
 
 

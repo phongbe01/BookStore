@@ -76,7 +76,7 @@ class UserRepository implements CommonRepository
                 {
                     if ($param['value'] != null)
                     {
-                        $result->where($param['field'], 'like', $param['value'] );
+                        $result->where($param['field'], 'like', $param['value']  . '%');
                     }
                 }
             }
