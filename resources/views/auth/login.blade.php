@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 {{--<div class="container">--}}
 {{--    <div class="row justify-content-center">--}}
@@ -99,23 +98,23 @@
 </div>
 
 {{--<script src="{{asset("js/validator.js")}}"></script>--}}
-<script>
+{{--<script>--}}
 
-    document.addEventListener('DOMContentLoaded', function () {
-        Validator({
-            form: '#form-2',
-            formGroupSelector: '.form-group',
-            errorSelector: '.form-message',
-            rules: [
-                Validator.isEmail('#email'),
-                Validator.minLength('#password', 6),
-            ],
-            onSubmit: function (data) {
-                // Call API
-                console.log(data);
-            }
-        });
-    });
+{{--    document.addEventListener('DOMContentLoaded', function () {--}}
+{{--        Validator({--}}
+{{--            form: '#form-2',--}}
+{{--            formGroupSelector: '.form-group',--}}
+{{--            errorSelector: '.form-message',--}}
+{{--            rules: [--}}
+{{--                Validator.isEmail('#email'),--}}
+{{--                Validator.minLength('#password', 6),--}}
+{{--            ],--}}
+{{--            onSubmit: function (data) {--}}
+{{--                // Call API--}}
+{{--                console.log(data);--}}
+{{--            }--}}
+{{--        });--}}
+{{--    });--}}
 
-</script>
+{{--</script>--}}
 @endsection
