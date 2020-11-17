@@ -37,3 +37,9 @@ Route::group(['middleware' => ['auth'], 'namespace' => 'Admin', 'prefix' => 'adm
     Route::resource('/books', 'BookController');
 
 });
+
+//Cart
+Route::get('/cart','ShoppingCartController@index')->name('cart.index');
+Route::get('/add-to-cart/{id}','ShoppingCartController@addToCart')->name('cart.addToCart');
+Route::post('/update-cart/{id}','ShoppingCartController@updateProductIntoCart')->name('cart.updateIntoCart');
+Route::get('/remove-cart/{id}','ShoppingCartController@removeProductIntoCart')->name('cart.removeIntoCart');

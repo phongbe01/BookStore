@@ -27,6 +27,32 @@ class BookRepository implements CommonRepository
         return $result;
     }
 
+    public function NovelList()
+    {
+        $result = DB::table('books')
+            ->leftJoin('authors', 'authors.id', '=', 'authorID')
+            ->leftJoin('publishers', 'publishers.id', '=', 'publisherID')
+            ->leftJoin('categories', 'categories.id', '=', 'categoryID')
+            ->select('books.id', 'books.title', 'books.summary', 'books.image', 'books.price', 'books.quantity', 'authors.authorname as author', 'publishers.publishname as publisher', 'categories.categoryname as category')
+            ->where('books.categoryID', '=', '1')
+            ->take(5)
+            ->get();
+        return $result;
+    }
+
+    public function EconomicList()
+    {
+        $result = DB::table('books')
+            ->leftJoin('authors', 'authors.id', '=', 'authorID')
+            ->leftJoin('publishers', 'publishers.id', '=', 'publisherID')
+            ->leftJoin('categories', 'categories.id', '=', 'categoryID')
+            ->select('books.id', 'books.title', 'books.summary', 'books.image', 'books.price', 'books.quantity', 'authors.authorname as author', 'publishers.publishname as publisher', 'categories.categoryname as category')
+            ->where('books.categoryID', '=', '2')
+            ->take(5)
+            ->get();
+        return $result;
+    }
+
     public function findById($id)
     {
         // TODO: Implement findById() method.

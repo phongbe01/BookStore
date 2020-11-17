@@ -6,7 +6,7 @@
             <a href="javascript:void(0)"><span
                     class="far fa-trash-alt lv-data-table-trash form-delete"></span></a>
         </td>
-        <td class="publisher-name-column">{{$book->title}}</td>
+        <td class="publisher-name-column">{{$book->title}}</td>x
         <td class="id-column">{{$book->price}}</td>
         <td class="id-column">{{$book->quantity}}</td>
         <td class="publisher-name-column">{{$book->author}}</td>

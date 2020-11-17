@@ -81,7 +81,7 @@
                         </tr>
                         </thead>
                         <tbody class="data-table-body">
-                        <div class="loading-table" style="display: none"></div>
+{{--                        <div class="loading-table" style="display: none"></div>--}}
                         @foreach($books as $book)
                             <tr>
                                 <td class="action-column">
