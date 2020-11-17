@@ -27,7 +27,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $book = $this->bookRepository->list(5);
+        $book = $this->bookRepository->EconomicList();
+        dd($book);
         return view('home');
     }
 }
