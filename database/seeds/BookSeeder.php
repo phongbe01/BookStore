@@ -14,7 +14,8 @@ class BookSeeder extends Seeder
         //sach chinht ri
         $book = new \App\Book();
         $book->title = '50 ý tưởng triết học';
-        $book->summary = 'Bàn về 50 chủ đề triết học thú vị, cuốn sách là một minh chứng cho thấy triết học không hề khô khan, sách vở. Dù là những ý tưởng xưa cũ nhất hay hiện đại nhất, chúng đều rất gần gũi, có tầm ảnh hưởng, giúp chúng ta hiểu cách thế giới này tồn tại và cách chúng ta tri nhận về nó.';
+        $book->summary = 'Bàn về 50 chủ đề triết học thú vị, cuốn sách là một minh chứng cho thấy triết học
+        không hề khô khan, sách vở. Dù là những ý tưởng xưa cũ nhất hay hiện đại nhất, chúng đều rất gần gũi';
         $book->image = 'image\book\chinhtri\50-y-tuong-triet-hoc_108132_1.jpg';
         $book->price = 120000;
         $book->quantity = 30;
@@ -25,7 +26,8 @@ class BookSeeder extends Seeder
 
         $book = new \App\Book();
         $book->title = 'Đi tìm hạnh phúc';
-        $book->summary = 'Ta có thể nói về hạnh phúc được hiểu như sự "mãn nguyện chủ quan", như là ý thức về trạng thái thỏa mãn (ít hay nhiều) một cách tổng quát và bền vững. Nhưng thế có đủ để mô tả hạnh phúc theo nghĩa đầy đủ nhất của từ này? Và nhất là, liệu ta có thể tác động vào nó ?';
+        $book->summary = 'Ta có thể nói về hạnh phúc được hiểu như sự "mãn nguyện chủ quan", như là ý thức về
+        trạng thái thỏa mãn (ít hay nhiều) một cách tổng quát và bền vững. Nhưng thế có đủ để mô tả hạnh phúc';
         $book->image = 'image\book\chinhtri\di-tim-hanh-phuc_108230_1.jpg';
         $book->price = 120000;
         $book->quantity = 30;
@@ -230,7 +232,11 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
 
         $book = new \App\Book();
         $book->title = 'Quản lý chiến lược';
-        $book->summary = 'Lịch sử không bao giờ lặp lại nên nếu cứ “học tập lại những điều xảy ra trong lịch sử” là đồng nghĩa với việc đưa mình vào vòng nguy hiểm. Hơn nữa, có nhiều sự việc không xảy ra một cách ngẫu nhiên. Tuy nhiên, tất cả chúng ta thường không nhìn nhận rằng mọi thứ xảy ra theo tính tất yếu. Giá trị đích thực của việc học từ lịch sử là trong một tình huống sẽ xảy ra rất nhiều việc, sẽ có nhiều chiến lược có hiệu quả tương ứng với những tình huống đó. Cuốn sách này là một tài liệu quản lý chiến lược giới thiệu những khái niệm chiến lược đã xuất hiện trong suốt 100 năm từ đầu thế kỷ 20 đến nay, cùng với nền tảng của chúng. Từ một chiến lược quản lý cổ điển được nhiều công ty Nhật Bản áp dụng, đến việc giới thiệu những chiến lược mới nhất được sinh ra trong môi trường kinh doanh thay đổi mạnh mẽ của thế kỷ 21, độc giả sẽ có cái nhìn sâu sắc hơn về dòng chảy của lịch sử kinh doanh.';
+        $book->summary = 'Lịch sử không bao giờ lặp lại nên nếu cứ “học tập lại những điều xảy ra trong lịch sử”
+        là đồng nghĩa với việc đưa mình vào vòng nguy hiểm. Hơn nữa, có nhiều sự việc không xảy ra một cách ngẫu nhiên.
+        Tuy nhiên, tất cả chúng ta thường không nhìn nhận rằng mọi thứ xảy ra theo tính tất yếu. Giá trị đích thực của
+        việc học từ lịch sử là trong một tình huống sẽ xảy ra rất nhiều việc, sẽ có nhiều chiến lược có hiệu quả
+        tương ứng với những tình huống đó.';
         $book->image = 'image\book\kinhte\quan-ly-chien-luoc_108305_1.jpg';
         $book->price = '140000';
         $book->quantity = 30;
