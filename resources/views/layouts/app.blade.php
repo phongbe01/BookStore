@@ -18,7 +18,15 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/auth.css') }}" rel="stylesheet">
+    <title>Book store</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="{{asset('css/style.css')}}" rel="stylesheet" type="text/css" media="all"/>
+    <link href="{{asset('css/slider.css')}}" rel="stylesheet" type="text/css" media="all"/>
+    <script type="text/javascript" src="{{asset('js/jquery-1.7.2.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/move-top.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/easing.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/startstop-slider.js')}}"></script>
 </head>
 <body>
     <div id="app">
@@ -73,7 +81,7 @@
 {{--            </div>--}}
 {{--        </nav>--}}
 
-        <main class="">
+        <main class="py-1">
             @yield('content')
         </main>
     </div>

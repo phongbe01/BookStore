@@ -2,22 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Repository\BookRepository;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    private $bookRepository;
-
-
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct(BookRepository $bookRepository)
+    public function __construct()
     {
-        $this->bookRepository = $bookRepository;
+//        $this->middleware('auth');
     }
 
     /**
@@ -27,7 +23,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $book = $this->bookRepository->EconomicList();
         return view('home');
     }
 }
