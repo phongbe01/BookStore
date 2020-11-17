@@ -295,10 +295,14 @@
             </a>
         </li>
         <li>
-            <a href="">
+            <a href="{{route('logout')}}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
                 <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
                 <span class="title">Đăng xuất</span>
             </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
         </li>
     </ul>
 </aside>
