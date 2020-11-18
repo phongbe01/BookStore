@@ -12,9 +12,9 @@ const mix = require('laravel-mix');
  */
 
 mix.js([
-    'resources/js/app.js',
-    'resources/js/ad' +
-    'min/system.js',
+    'resources/js/*.js',
+    // 'resources/js/ad' +
+    // 'min/system.js',
 ], 'public/js/app.js')
     .sass('resources/sass/app.scss', 'public/css')
     .version();
@@ -27,6 +27,7 @@ mix.styles([
     'public/css/sidebar.css',
     'public/css/table.css',
     'public/css/bootstrap.css',
+    // 'public/css/base.css',
 ], 'public/css/all.css')
     .version()
     .browserSync('http://127.0.0.1:8080/');

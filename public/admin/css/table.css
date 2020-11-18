@@ -40,9 +40,9 @@ body {
 }
 
 .data-table-head {
-    color: #347eff;
+    color: black;
     text-align: center;
-    background: #dedede;
+    background: #efefef;
     display: inline-block;
     width: 100%;
 }
