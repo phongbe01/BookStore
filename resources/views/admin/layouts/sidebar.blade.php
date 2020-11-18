@@ -293,7 +293,7 @@
                 <span class="icon"><i class="fas fa-table"></i></span>
                 <span class="title">Sách</span>
             </a>
-        </li>
+        </li>l
         <li>
             <a href="{{route('logout')}}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

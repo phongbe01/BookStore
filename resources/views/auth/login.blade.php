@@ -1,5 +1,4 @@
 @extends('layouts.app')
-@section('content')
 {{--<div class="container">--}}
 {{--    <div class="row justify-content-center">--}}
 {{--        <div class="col-md-8">--}}
@@ -69,9 +68,9 @@
 {{--        </div>--}}
 {{--    </div>--}}
 {{--</div>--}}
-<div class="main">
+<div class="main login-background">
 
-    <form action="{{route('login')}}" method="POST" class="form" id="form-2">
+    <form action="{{route('login')}}" method="POST" class="form" id="login-form">
         @csrf
         <h3 class="heading-1">Đăng nhập</h3>
 
@@ -97,24 +96,20 @@
 
 </div>
 
-{{--<script src="{{asset("js/validator.js")}}"></script>--}}
-{{--<script>--}}
+<script src="{{asset("js/validator.js")}}" defer></script>
+<script>
 
-{{--    document.addEventListener('DOMContentLoaded', function () {--}}
-{{--        Validator({--}}
-{{--            form: '#form-2',--}}
-{{--            formGroupSelector: '.form-group',--}}
-{{--            errorSelector: '.form-message',--}}
-{{--            rules: [--}}
-{{--                Validator.isEmail('#email'),--}}
-{{--                Validator.minLength('#password', 6),--}}
-{{--            ],--}}
-{{--            onSubmit: function (data) {--}}
-{{--                // Call API--}}
-{{--                console.log(data);--}}
-{{--            }--}}
-{{--        });--}}
-{{--    });--}}
+    document.addEventListener('DOMContentLoaded', function (e) {
+        e.preventDefault();
+        Validator({
+            form: '#login-form',
+            formGroupSelector: '.form-group-1',
+            errorSelector: '.form-message',
+            rules: [
+                Validator.isEmail('#email'),
+                Validator.minLength('#password', 6),
+            ],
+        });
+    });
 
-{{--</script>--}}
-@endsection
+</script>

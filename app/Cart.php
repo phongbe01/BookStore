@@ -26,11 +26,13 @@ class Cart
         if ($this->items)   {
             if (array_key_exists($id,$this->items)) {
                 $storeItem = $this->items[$id];
+                $this->totalQty = $this->totalQty - $storeItem['qty'];
+                $storeItem['qty'] = $storeItem['qty'] + $itemQty;
             }
         }
         $storeItem['price'] = $item->price * $storeItem['qty'];
         $this->items[$id] = $storeItem;
-        $this->totalQty = $this->totalQty + $storeItem['qty']  ;
+        $this->totalQty = $this->totalQty + $storeItem['qty'] ;
         $this->totalPrice += $storeItem['price'];
     }
 
@@ -46,7 +48,6 @@ class Cart
                 //giam tong so luong san pham co trong gio hang
                 // $this->totalQty--;
                 unset($productsIntoCart[$id]);
-//                dd($productsIntoCart[$id]);
                 $this->items = $productsIntoCart;
             }
         }
@@ -71,4 +72,5 @@ class Cart
             }
         }
     }
+
 }

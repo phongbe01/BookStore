@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Repository\CartRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class ShoppingCartController extends Controller
 {
@@ -24,8 +25,9 @@ class ShoppingCartController extends Controller
     public function addToCart(Request $request, $productId)
     {
         $itemQty = $request->get('qty');
-        $this->cartRepository->addToCart($request,$productId,$itemQty);
-        return redirect()->route('cart.index');
+        $this->cartRepository->addToCart($request,$productId,$itemQty == null ? 1 : $itemQty);
+        $total = $this->cartRepository->index()->totalQty;
+        return response()->json(['status' => 200, 'total' => $total]);
     }
     public function removeProductIntoCart($productId)
     {

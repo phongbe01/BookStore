@@ -74,7 +74,7 @@
 {{--        </div>--}}
 {{--    </div>--}}
 {{--</div>--}}
-<div class="main">
+<div class="main login-background">
 
     <form action="" method="POST" class="form" id="form-1">
         <h3 class="heading-1">Đăng Ký</h3>

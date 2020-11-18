@@ -35,7 +35,7 @@ class BookRepository implements CommonRepository
             ->leftJoin('categories', 'categories.id', '=', 'categoryID')
             ->select('books.id', 'books.title', 'books.summary', 'books.image', 'books.price', 'books.quantity', 'authors.authorname as author', 'publishers.publishname as publisher', 'categories.categoryname as category')
             ->where('books.categoryID', '=', '1')
-            ->take(5)
+            ->take(4)
             ->get();
         return $result;
     }
@@ -48,7 +48,7 @@ class BookRepository implements CommonRepository
             ->leftJoin('categories', 'categories.id', '=', 'categoryID')
             ->select('books.id', 'books.title', 'books.summary', 'books.image', 'books.price', 'books.quantity', 'authors.authorname as author', 'publishers.publishname as publisher', 'categories.categoryname as category')
             ->where('books.categoryID', '=', '2')
-            ->take(5)
+            ->take(4)
             ->get();
         return $result;
     }

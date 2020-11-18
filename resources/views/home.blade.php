@@ -25,7 +25,7 @@
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    {{ Auth::user()->firstname }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -48,8 +48,8 @@
             </div>
             <div class="header_top">
                 <div class="cart">
-                <span>Giỏ hàng:</span>
-                    <div id="dd" class="wrapper-dropdown-2"> 0 sản phẩm
+                    <span>Giỏ hàng:</span>
+                    <div id="dd" class="wrapper-dropdown-2"><span id="total">0</span> sản phẩm
                         <ul class="dropdown">
                             <li></li>
                         </ul>
@@ -199,63 +199,24 @@
                     <div class="clear"></div>
                 </div>
                 <div class="section group">
-                    <div class="grid_1_of_4 images_1_of_4">
-                        <a href="preview.html"><img src="image/book/kinhte/duong-den-thanh-cong-cua-jack-ma_50720_1.jpg"
-                                                    alt=""/></a>
-                        <h2>Đường đến thành công</h2>
-                        <div class="price-details">
-                            <div class="price-number">
-                                <p><span class="rupees">200.000đ </span></p>
+                    @foreach($novels as $novel)
+                        <div class="grid_1_of_4 images_1_of_4">
+                            <a href="preview.html"><img src="{{asset('/storage/' . $novel->image)}}"
+                                                        alt="$novel->image"/></a>
+                            <h2>{{$novel->title}}</h2>
+                            <div class="price-details">
+                                <div class="price-number">
+                                    <p><span class="rupees">{{number_format($novel->price)}}đ </span></p>
+                                </div>
+                                <div class="add-cart">
+                                    <h4><a href="javascript:void(0)" class="add-to-cart" data-id="{{$novel->id}}"
+                                           onclick="addToCart({{$novel->id}})">Thêm vào giỏ</a></h4>
+                                </div>
+                                <div class="clear"></div>
                             </div>
-                            <div class="add-cart">
-                                <h4><a href="preview.html">Thêm vào giỏ</a></h4>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
 
-                    </div>
-                    <div class="grid_1_of_4 images_1_of_4">
-                        <a href="preview.html"><img src="image/book/vanhoc/nguoi-sai-gon-bat-dac-di_75172_1.jpg"
-                                                    alt=""/></a>
-                        <h2>Người Sài Gòn bất đắc dĩ </h2>
-                        <div class="price-details">
-                            <div class="price-number">
-                                <p><span class="rupees">115.000đ </span></p>
-                            </div>
-                            <div class="add-cart">
-                                <h4><a href="preview.html">Thêm vào giỏ</a></h4>
-                            </div>
-                            <div class="clear"></div>
                         </div>
-
-                    </div>
-                    <div class="grid_1_of_4 images_1_of_4">
-                        <a href="preview.html"><img src="image/book/chinhtri/muon-kiep-nhan-sinh_107747_1.png" alt=""/></a>
-                        <h2>Muôn kiếp nhân sinh</h2>
-                        <div class="price-details">
-                            <div class="price-number">
-                                <p><span class="rupees">150.000đ</span></p>
-                            </div>
-                            <div class="add-cart">
-                                <h4><a href="preview.html">Thêm vào giỏ</a></h4>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                    </div>
-                    <div class="grid_1_of_4 images_1_of_4">
-                        <a href="preview.html"><img src="image/book/kynangsong/cang-ky-luat-cang-tu-do_109147_1.jpg"
-                                                    alt=""/></a>
-                        <h2>Càng kỷ luật càng tự do </h2>
-                        <div class="price-details">
-                            <div class="price-number">
-                                <p><span class="rupees">250.000đ</span></p>
-                            </div>
-                            <div class="add-cart">
-                                <h4><a href="preview.html">Thêm vào giỏ</a></h4>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
                 <div class="content_bottom">
                     <div class="heading">
@@ -266,6 +227,7 @@
                     </div>
                     <div class="clear"></div>
                 </div>
+                l
                 <div class="section group">
                     <div class="grid_1_of_4 images_1_of_4">
                         <a href="preview.html"><img src="image/book/thieunhi/nuoc-co-hoa_106191_1.png" alt=""/></a>
@@ -364,14 +326,14 @@
                     </ul>
                     <div class="social-icons">
                         <h4>Follow Us</h4>
-                        <ul>
-                            <li><a href="#" target="_blank"><img src="images/facebook.png" alt=""/></a></li>
-                            <li><a href="#" target="_blank"><img src="images/twitter.png" alt=""/></a></li>
-                            <li><a href="#" target="_blank"><img src="images/skype.png" alt=""/> </a></li>
-                            <li><a href="#" target="_blank"> <img src="images/dribbble.png" alt=""/></a></li>
-                            <li><a href="#" target="_blank"> <img src="images/linkedin.png" alt=""/></a></li>
-                            <div class="clear"></div>
-                        </ul>
+                        {{--                        <ul>--}}
+                        {{--                            <li><a href="#" target="_blank"><img src="images/facebook.png" alt=""/></a></li>--}}
+                        {{--                            <li><a href="#" target="_blank"><img src="images/twitter.png" alt=""/></a></li>--}}
+                        {{--                            <li><a href="#" target="_blank"><img src="images/skype.png" alt=""/> </a></li>--}}
+                        {{--                            <li><a href="#" target="_blank"> <img src="images/dribbble.png" alt=""/></a></li>--}}
+                        {{--                            <li><a href="#" target="_blank"> <img src="images/linkedin.png" alt=""/></a></li>--}}
+                        {{--                            <div class="clear"></div>--}}
+                        {{--                        </ul>--}}
                     </div>
                 </div>
             </div>
@@ -381,8 +343,19 @@
         </div>
     </div>
     <script type="text/javascript">
+        function addToCart(id) {
+            $.get('add-to-cart/' + id, function (data) {
+                $('#total').text(data.total);
+            })
+        }
+
         $(document).ready(function () {
-            $().UItoTop({easingType: 'easeOutQuart'});
+            // $().UItoTop({easingType: 'easeOutQuart'});
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-toke n"]').attr('content')
+                }
+            });
 
         });
     </script>
