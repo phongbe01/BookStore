@@ -20,7 +20,7 @@ class BookSeeder extends Seeder
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 3;
+        $book->categoryID = 3;
         $book->save();
 
         $book = new \App\Book();
@@ -31,7 +31,7 @@ class BookSeeder extends Seeder
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 3;
+        $book->categoryID = 3;
         $book->save();
 
         $book = new \App\Book();
@@ -42,7 +42,7 @@ class BookSeeder extends Seeder
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 3;
+        $book->categoryID = 3;
         $book->save();
 
         $book = new \App\Book();
@@ -53,7 +53,7 @@ class BookSeeder extends Seeder
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 3;
+        $book->categoryID = 3;
         $book->save();
 
         $book = new \App\Book();
@@ -64,7 +64,7 @@ class BookSeeder extends Seeder
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 3;
+        $book->categoryID = 3;
         $book->save();
 
         $book = new \App\Book();
@@ -75,7 +75,7 @@ class BookSeeder extends Seeder
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 3;
+        $book->categoryID = 3;
         $book->save();
 
         $book = new \App\Book();
@@ -86,7 +86,7 @@ class BookSeeder extends Seeder
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 3;
+        $book->categoryID = 3;
         $book->save();
 
         $book = new \App\Book();
@@ -97,7 +97,7 @@ class BookSeeder extends Seeder
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 3;
+        $book->categoryID = 3;
         $book->save();
 
         $book = new \App\Book();
@@ -108,7 +108,7 @@ class BookSeeder extends Seeder
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 3;
+        $book->categoryID = 3;
         $book->save();
 
         $book = new \App\Book();
@@ -119,7 +119,7 @@ class BookSeeder extends Seeder
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 3;
+        $book->categoryID = 3;
         $book->save();
 
         $book = new \App\Book();
@@ -132,7 +132,7 @@ Danh sách những bậc vĩ nhân Osho bàn đến rất đa dạng: Ở phươ
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 3;
+        $book->categoryID = 3;
         $book->save();
 
         $book = new \App\Book();
@@ -144,7 +144,7 @@ Dẫn dắt người đọc qua câu chuyện về cuộc đời Đức Phật, 
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 3;
+        $book->categoryID = 3;
         $book->save();
 
         //sach kinh te
@@ -156,7 +156,7 @@ Dẫn dắt người đọc qua câu chuyện về cuộc đời Đức Phật, 
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 2;
+        $book->categoryID = 2;
         $book->save();
 
         $book = new \App\Book();
@@ -167,7 +167,7 @@ Dẫn dắt người đọc qua câu chuyện về cuộc đời Đức Phật, 
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 2;
+        $book->categoryID = 2;
         $book->save();
 
         $book = new \App\Book();
@@ -181,7 +181,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 2;
+        $book->categoryID = 2;
         $book->save();
 
         $book = new \App\Book();
@@ -192,7 +192,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 2;
+        $book->categoryID = 2;
         $book->save();
 
         $book = new \App\Book();
@@ -203,7 +203,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 2;
+        $book->categoryID = 2;
         $book->save();
 
         $book = new \App\Book();
@@ -214,7 +214,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 2;
+        $book->categoryID = 2;
         $book->save();
 
         $book = new \App\Book();
@@ -225,7 +225,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 2;
+        $book->categoryID = 2;
         $book->save();
 
         $book = new \App\Book();
@@ -236,7 +236,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 2;
+        $book->categoryID = 2;
         $book->save();
 
         $book = new \App\Book();
@@ -247,7 +247,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 2;
+        $book->categoryID = 2;
         $book->save();
 
         //sach thieu nhi
@@ -259,7 +259,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -270,7 +270,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -281,7 +281,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -292,7 +292,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -303,7 +303,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         //sach tri thuc
@@ -316,7 +316,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = 3;
         $book->publisherID = 3;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -327,7 +327,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = 3;
         $book->publisherID = 3;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -338,7 +338,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = 3;
         $book->publisherID = 3;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -349,7 +349,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = 3;
         $book->publisherID = 3;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -360,7 +360,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = 3;
         $book->publisherID = 3;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -371,7 +371,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = 3;
         $book->publisherID = 3;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -382,7 +382,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = 3;
         $book->publisherID = 3;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -393,7 +393,7 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
         $book = new \App\Book();
@@ -404,9 +404,321 @@ sẽ có được công cụ cần thiết để thay đổi thế giới.';
         $book->quantity = 30;
         $book->authorID = App\Author::inRandomOrder()->first()->id;
         $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
-        $book->category = 4;
+        $book->categoryID = 4;
         $book->save();
 
+        $book = new \App\Book();
+        $book->title = 'Cố Định Một Đám Mây';
+        $book->summary = '“Cố định một đám mây” là tập truyện ngắn với 10 truyện mới, dày hơn 180 trang.
+        Nhà văn đưa độc giả bước vào một không gian mới trong chuyến viễn hành văn chương âm thầm nhưng
+        đầy dấu ấn cá nhân.';
+        $book->image = 'image\book\vanhoc\co-dinh-mot-dam-may_93567_1.jpg';
+        $book->price = '77600';
+        $book->quantity = 30;
+        $book->authorID = App\Author::inRandomOrder()->first()->id;
+        $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
+        $book->categoryID = 4;
+        $book->save();
 
+        $book = new \App\Book();
+        $book->title = 'Danh Sách Của Schindler';
+        $book->summary = 'Trong bóng đen khủng khiếp của các trại diệt chủng thời Đệ nhị Thế chiến, có một nhà công nghiệp Đức đã trở thành cứu tinh của người Do Thái. Oskar Schindler, con người ham lạc thú, kẻ còn lâu mới được coi là mẫu mực, cũng đồng thời là kẻ đã mạo hiểm cả mạng sống của mình để bảo vệ những đồng loại khác chủng tộc mà nếu không có ông thì hẳn đã kết thúc cuộc đời trong lò thiêu. ';
+        $book->image = 'image\book\vanhoc\danh-sach-cua-schindler_91159_1.jpg';
+        $book->price = '90000';
+        $book->quantity = 30;
+        $book->authorID = App\Author::inRandomOrder()->first()->id;
+        $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
+        $book->categoryID = 4;
+        $book->save();
+
+        $book = new \App\Book();
+        $book->title = 'Đêm Núm Sen';
+        $book->summary = '“Ba giờ đêm, dưới phố, lại lào xào một cuộc hành binh dài dặc, về làng… Tôi tỉnh giấc. Sứa nằm thiêm thiếp bên vai tôi. Tôi nghe tiếng Sứa thở. Tôi vuốt nhẹ, dọc cái lưng trần. Vuốt nhẹ. Tôi nhớ cặp đùi. Khi nãy, nó giãy. Nó giãy cuống quýt. Tôi đưa tay vuốt. Sứa vẫn thiêm thiếp. Tôi vuốt. Căn buồng đỏ mênh mông. Tôi vuốt sự ngây thơ rơm rớm. Con nai nằm nghiêng đùi hơi co. Tôi vuốt… Dưới phố, những ki lô mét hành quân… Tôi vuốt. Sứa tỉnh dậy. Sứa thẹn. Sứa co người lại. Tôi vuốt. Con nai ngây thơ của tôi ơi! Tôi vuốt con nai bị thương của tôi. Rơm rớm… Rơm rớm…”';
+        $book->image = 'image\book\vanhoc\dem-num-sen_70275_1.jpg';
+        $book->price = '77600';
+        $book->quantity = 30;
+        $book->authorID = App\Author::inRandomOrder()->first()->id;
+        $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
+        $book->categoryID = 4;
+        $book->save();
+
+        $book = new \App\Book();
+        $book->title = 'Đường Xa Nắng Mới';
+        $book->summary = 'Đường xa nắng mới là tập bút ký mới nhất của Tiến sĩ Nguyễn Tường Bách, tập hợp những bài viết ký sự du hành của tác giả đến nhiều xứ sở lạ kỳ trên thế giới.
+        Bắt đầu từ câu chuyện về ngôi làng nhỏ yên bình của mình ở nước Đức; bằng lối kể chuyện đầy mê hoặc, tác giả đã dẫn dắt người đọc du hành qua nhiều vùng đất lạ mà điểm dừng chân cuối cùng là mãi tận Kailash (Ngân Sơn) - ngọn núi thiêng được sùng bái nhất trên quả địa cầu.';
+        $book->image = 'image\book\vanhoc\duong-xa-nang-moi_46040_1.jpg';
+        $book->price = '112000';
+        $book->quantity = 30;
+        $book->authorID = App\Author::inRandomOrder()->first()->id;
+        $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
+        $book->categoryID = 4;
+        $book->save();
+
+        $book = new \App\Book();
+        $book->title = 'Hành Tinh Khỉ';
+        $book->summary = '"Những gì xảy ra cho chúng ta đều đã được dự báo trước. Sự lười biếng suy nghĩ đang chiếm giữ não bộ của chúng ta. Sách vở không còn nữa, ngay cả các tiểu thuyết trinh thám cũng trở nên quá tầm với trí tuệ đầu óc con người hiện nay. Không còn trò chơi nào nữa, chẳng còn cuộc thi đấu nào. Ngay cả một bộ phim trẻ con cũng không lôi cuốn được ai...”';
+        $book->image = 'image\book\vanhoc\hanh-tinh-khi_73907_1.jpg';
+        $book->price = '51600';
+        $book->quantity = 30;
+        $book->authorID = App\Author::inRandomOrder()->first()->id;
+        $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
+        $book->categoryID = 4;
+        $book->save();
+
+        $book = new \App\Book();
+        $book->title = 'Hãy Đi Đặt Người Canh Gác';
+        $book->summary = '"Nước Mỹ những năm 1950. Làn sóng đòi quyền bình đẳng cho người da đen đang
+         dâng trào cả nước; trong vài tiểu bang miền Nam, người da trắng tập hợp để bảo vệ cái mà họ
+         coi là bản sắc bị tước đoạt của mình… Trở về thăm nhà như lệ thường, Jean Louise không ngờ
+         mình sắp bước chân vào giữa cuộc chiến tư tưởng của thập kỷ. Cô sẽ ngỡ ngàng thấy người cha
+         Atticus, vị anh hùng vì lẽ công bình của cô thuở bé, dường như đã đổi màu niềm tin; người thân,
+         bạn bè lâu năm bỗng dưng xa lạ; thị trấn Maycomb quê hương và chính cô không còn nhận ra nhau.
+         Công lý ở đâu, đúng sai là gì? Khi thành trì lương tâm tuổi thơ cô đã vụn vỡ từng viên đá một,
+         Jean Louise bắt đầu đi tìm một sự thật của riêng mình.';
+        $book->image = 'image\book\vanhoc\hay-di-dat-nguoi-canh-gac_51551_1.jpg';
+        $book->price = '51600';
+        $book->quantity = 30;
+        $book->authorID = App\Author::inRandomOrder()->first()->id;
+        $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
+        $book->categoryID = 4;
+        $book->save();
+
+        $book = new \App\Book();
+        $book->title = 'Hôm Nay Tôi Thất Tình';
+        $book->summary = 'Muốn vượt qua nỗi đau thất tình ư, dễ lắm...
+        Đôi khi vẫn nghĩ, sao cứ phải ôm mãi một bó củi khô khi phía trước là rừng rậm,
+        phải tiếc một gáo nước đã đổ đi khi suối nguồn đang ở phía trước?';
+        $book->image = 'image\book\vanhoc\hom-nay-toi-that-tinh_65606_1.jpg';
+        $book->price = '68800';
+        $book->quantity = 30;
+        $book->authorID = App\Author::inRandomOrder()->first()->id;
+        $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
+        $book->categoryID = 4;
+        $book->save();
+
+        $book = new \App\Book();
+        $book->title = 'Hòm Thư Số 110';
+        $book->summary = 'Tình yêu của anh nhón chân rón rén bước.Em đã bước vào vườn hoa của anh rồi nhỉ.
+        Dù chưa được cho phép.';
+        $book->image = 'image\book\vanhoc\hom-thu-so-110_104178_1.png';
+        $book->price = '119250';
+        $book->quantity = 30;
+        $book->authorID = App\Author::inRandomOrder()->first()->id;
+        $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
+        $book->categoryID = 4;
+        $book->save();
+
+        $book = new \App\Book();
+        $book->title = 'Không Ai Qua Sông';
+        $book->summary = 'Không ai qua sông - Tập truyện ngắn mới nhất của Nguyễn Ngọc Tư gợi bạn đọc nhớ đến đến truyện dài Cánh đồng bất tận đã từng gây xôn xao trên văn đàn một thời gian dài. Cũng lấy cảm hứng từ cuộc sống của người dân nông thôn miền Tây, nhưng giờ đây nhân vật của NNT có cái trăn trở của một vùng đất đã dần bị đô thị hóa, con người phải thích ứng với những thứ nhân danh cuộc sống hiện đại nhưng có thể phá nát những rường mối gia đình.';
+        $book->image = 'image\book\vanhoc\khong-ai-qua-song_48943_1.jpg';
+        $book->price = '119250';
+        $book->quantity = 30;
+        $book->authorID = App\Author::inRandomOrder()->first()->id;
+        $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
+        $book->categoryID = 4;
+        $book->save();
+
+        $book = new \App\Book();
+        $book->title = 'Không Đến Một';
+        $book->summary = 'Nếu bạn muốn xây dựng một tương lai tốt đẹp hơn, bạn phải tin vào bí mật.
+        Bí mật lớn nhất của thời đại chúng ta là vẫn còn những lĩnh vực và phát minh mới cần chúng ta khám phá và tạo ra. Trong Không Đến Một, doanh nhân và nhà đầu tư huyền thoại Peter Thiel chỉ cho chúng ta biết cách tìm ra những cách thức độc đáo để tạo ra những thứ mới này.';
+        $book->image = 'image\book\vanhoc\khong-den-mot_54214_1.jpg';
+        $book->price = '119250';
+        $book->quantity = 30;
+        $book->authorID = App\Author::inRandomOrder()->first()->id;
+        $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
+        $book->categoryID = 4;
+        $book->save();
+
+        $book = new \App\Book();
+        $book->title = 'Lũ Trẻ Ở Làng Ồn Ào';
+        $book->summary = '“Tôi viết để làm vui đứa trẻ trong tôi, và tôi chỉ có thể hi vọng rằng những đứa
+        trẻ khác cũng cảm thấy vui theo cách đó.” – niềm hi vọng của Astrid Lindgren đã hoàn toàn trở
+        thành hiện thực, ngày nay, trẻ em ở nhiều nước trên toàn cầu vẫn đang vui thích khi đọc những cuốn
+        truyện mà bà sáng tác từ nhiều nhiều năm trước.';
+        $book->image = 'image\book\vanhoc\lu-tre-o-lang-on-ao.jpg';
+        $book->price = '32400';
+        $book->quantity = 30;
+        $book->authorID = App\Author::inRandomOrder()->first()->id;
+        $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
+        $book->categoryID = 4;
+        $book->save();
+
+        $book = new \App\Book();
+        $book->title = 'Luật Hấp Dẫn Của Nụ Cười';
+        $book->summary = 'Luật Hấp Dẫn Của Nụ Cười là những bài viết “sống đẹp” chắt lọc từ chính trải nghiệm của MC Quỳnh Hương. Cô viết cho mình, cho bạn đọc, và cho những mảnh đời cô quan sát, chiêm nghiệm được; để động viên, để nhen nhúm và để giữ gìn nụ cười lạc quan trên môi người, từ đó “vượt qua những con dốc khúc khuỷu, tiếp tục bước những bước đi vững chãi của cuộc đời”; hay như để “gieo duyên” đến những tâm hồn còn bối rối, mông lung, bế tắc suy nghĩ hòng hướng đến những tư duy rộng rãi khoáng đạt hơn, và “qua đó biết đâu giúp ích được” cho họ, như cô tâm niệm.';
+        $book->image = 'image\book\vanhoc\luat-hap-dan-cua-nu-cuoi_74901_1.jpg';
+        $book->price = '59500';
+        $book->quantity = 30;
+        $book->authorID = App\Author::inRandomOrder()->first()->id;
+        $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
+        $book->categoryID = 4;
+        $book->save();
+
+        $book = new \App\Book();
+        $book->title = 'Mắt Biếc';
+        $book->summary = 'Mắt biếc là một tác phẩm được nhiều người bình chọn là hay nhất của nhà văn Nguyễn Nhật Ánh. Tác phẩm này cũng đã được dịch giả Kato Sakae dịch sang tiếng Nhật để giới thiệu với độc giả Nhật Bản. ';
+        $book->image = 'image\book\vanhoc\mat-biec-ban-dac-biet-_100101_2.jpeg';
+        $book->price = '165000';
+        $book->quantity = 30;
+        $book->authorID = App\Author::inRandomOrder()->first()->id;
+        $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
+        $book->categoryID = 4;
+        $book->save();
+
+        $book = new \App\Book();
+        $book->title = 'Mike Tyson - Sự Thật Trần Trụi';
+        $book->summary = 'Mike Tyson sinh năm 1966 là cựu vận động viên quyền Anh người Mỹ nổi tiếng thế giới. Bắt đầu thi đấu chuyên nghiệp ở độ tuổi mười tám, ông nhanh chóng giành được cả ba đai vô địch WBA, WBC và IBF khi vừa mới hai mươi để trở thành nhà vô địch quyền Anh hạng nặng trẻ tuổi nhất lịch sử. Năm 2010, ông được tạp chí The Ring xếp hạng thứ mười sáu trong danh sách 100 tay đấm vĩ đại nhất mọi thời đại.';
+        $book->image = 'image\book\vanhoc\mike-tyson-su-that-tran-trui_73906_1.jpg';
+        $book->price = '126750';
+        $book->quantity = 30;
+        $book->authorID = App\Author::inRandomOrder()->first()->id;
+        $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
+        $book->categoryID = 4;
+        $book->save();
+
+        $book = new \App\Book();
+        $book->title = 'Ngày Tháng Nào Đã Ra Đi';
+        $book->summary = 'Trong nỗi niềm tình cờ hoang mạc lắng nghe nhân gian trở mình, gọi về để nhớ, gọi về để quên, cho vô biên, cho sợi khói, cho chiêm bao trấn ngự mấy tầng trùng phùng cửu biệt của “muôn dặm không mây muôn dặm trời.';
+        $book->image = 'image\book\vanhoc\ngaythangnaodaradi.jpg';
+        $book->price = '79200';
+        $book->quantity = 30;
+        $book->authorID = App\Author::inRandomOrder()->first()->id;
+        $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
+        $book->categoryID = 4;
+        $book->save();
+
+        $book = new \App\Book();
+        $book->title = 'Người Khuân Đá';
+        $book->summary = 'Tình yêu cuộc sống và đạo lý ở đời trong câu chuyện bếp lửa, chuyện gia đình, chuyện của mọi người mà thấy đó chuyện của mình...';
+        $book->image = 'image\book\vanhoc\nguoi-khuan-da_90090_1.png';
+        $book->price = '89250';
+        $book->quantity = 30;
+        $book->authorID = App\Author::inRandomOrder()->first()->id;
+        $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
+        $book->categoryID = 4;
+        $book->save();
+
+        $book = new \App\Book();
+        $book->title = 'Người Sài Gòn Bất Đắc Dĩ';
+        $book->summary = 'Sách tập hợp những truyện ngắn và ký viết về miền đất Nam Bộ, vùng ruộng đồng sông nước của nhà văn Võ Đắc Danh. Bàng bạc trong các truyện là nỗi niềm của những người nông dân đã một đời thân cò lặn lội, oằn vai dưới gánh nặng đau khổ của chiến tranh hôm qua, rồi lại vì miếng cơm manh áo hôm nay nhưng vẫn bất khuất, trung kiên chống lại áp bức, bất công.';
+        $book->image = 'image\book\vanhoc\nguoi-sai-gon-bat-dac-di_75172_1.jpg';
+        $book->price = '150000';
+        $book->quantity = 30;
+        $book->authorID = App\Author::inRandomOrder()->first()->id;
+        $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
+        $book->categoryID = 4;
+        $book->save();
+
+        $book = new \App\Book();
+        $book->title = 'Những Câu Chuyện Về Đàn Bà';
+        $book->summary = 'Cuốn sách tập hợp những bài viết tản mạn của nhạc sĩ Tuấn Khanh. Mỗi bài viết thể hiện góc nhìn, quan điểm sâu sắc về con người, cuộc sống, xã hội... Một Tuấn Khanh với những suy ngẫm rất thật, rất đời. Có thể tìm thấy trong cuốn sách dung dị này một góc nhỏ Sài Gòn bình yên nỗi nhớ, một cuộc đối thoại ngắn "Phụ nữ Việt có tệ lắm không?", một nỗi niềm trăn trở "Người Việt mình rồi sẽ sống ra sao?", "Tổ quốc là gì?"...';
+        $book->image = 'image\book\vanhoc\nhung-cau-chuyen-ve-dan-ba-_54268_1.jpg';
+        $book->price = '150000';
+        $book->quantity = 30;
+        $book->authorID = App\Author::inRandomOrder()->first()->id;
+        $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
+        $book->categoryID = 4;
+        $book->save();
+
+        $book = new \App\Book();
+        $book->title = 'Oscar Và Bà Áo Hồng';
+        $book->summary = 'Cuốn sách gồm những bức thư gửi Chúa từ một cậu bé mười tuổi, nhóc Oscar, biệt danh Sọ Trứng, vì cái đầu trọc - hệ quả sau đợt điều trị hóa chất do bệnh máu trắng. Oscar kể với Chúa về những mong ước của mình, về những gì diễn ra trong mười hai ngày có lẽ là cuối cùng của cuộc đời cậu. Những lá thư ấy đã được bà Hoa Hồng, một tình nguyện viên đến chơi với các bệnh nhi, tìm thấy sau khi Oscar mất. Nhờ có bà Hoa Hồng, mười hai ngày ấy đã trở thành huyền thoại. ';
+        $book->image = 'image\book\vanhoc\oscar-va-ba-ao-hong_48343_1.jpg';
+        $book->price = '41250';
+        $book->quantity = 30;
+        $book->authorID = App\Author::inRandomOrder()->first()->id;
+        $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
+        $book->categoryID = 4;
+        $book->save();
+
+        $book = new \App\Book();
+        $book->title = 'Sài Gòn Bao Nhớ';
+        $book->summary = '"Bạn có thể nhớ về cha mẹ như về những người đã đánh đòn bạn, họ già cả và trái tính trái nết, đôi lúc khó khăn đến khắc nghiệt... và bạn cũng có thể nhớ về cha mẹ như những người gần như duy nhất trên hành tinh này đã luôn yêu thương, chăm sóc và hy sinh tất cả cho bạn, vô điều kiện. Bạn có thể nhớ về Sài Gòn như về một chốn xô bồ, đầy kẹt xe, bụi bặm, cướp giật, xì ke và lừa lọc... hoặc bạn cũng có thể chọn nhớ về Sài Gòn như về mảnh đất đã cưu mang mười triệu con người, mảnh đất của tình nghĩa, phóng khoáng và hào hiệp.';
+        $book->image = 'image\book\vanhoc\sai-gon-bao-nho_48254_1.jpg';
+        $book->price = '41250';
+        $book->quantity = 30;
+        $book->authorID = App\Author::inRandomOrder()->first()->id;
+        $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
+        $book->categoryID = 4;
+        $book->save();
+
+        $book = new \App\Book();
+        $book->title = 'Sẽ Có Cách, Đừng Lo';
+        $book->summary = 'Tản văn Sẽ có cách, đừng lo với lối viết gần gũi, những tự sự, trăn trở về tình yêu, chuyện đời - chuyện người. Cuốn sách như một người bạn động viên tác giả cũng như đem lại niềm tha thiết yêu cuộc sống cho độc giả, thể hiện năng lượng sống tích cực khi đứng trước những điều tưởng chừng như rất khó vượt qua.';
+        $book->image = 'image\book\vanhoc\se-co-cach-dung-lo-_48341_1.jpg';
+        $book->price = '41400';
+        $book->quantity = 30;
+        $book->authorID = App\Author::inRandomOrder()->first()->id;
+        $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
+        $book->categoryID = 4;
+        $book->save();
+
+        $book = new \App\Book();
+        $book->title = 'Sống Như Cây Rừng';
+        $book->summary = 'Sống Như Cây Rừng là một trong bộ ba cuốn tập hợp những bài viết hay nhất được tuyển chọn trong gần 500 bài được viết suốt 8 năm của chuyên mục "Trò chuyện đầu tuần" trên báo Hoa Học Trò của tác giả Hà Nhân. Anh chính là nhà báo Lê Thanh Hà, phó Tổng biên tập báo Hoa Học Trò, Sinh viên Việt Nam.';
+        $book->image = 'image\book\vanhoc\song-nhu-cay-rung_50836_1.jpg';
+        $book->price = '46500';
+        $book->quantity = 30;
+        $book->authorID = App\Author::inRandomOrder()->first()->id;
+        $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
+        $book->categoryID = 4;
+        $book->save();
+
+        $book = new \App\Book();
+        $book->title = 'Ta Có Bi Quan Không?';
+        $book->summary = 'Giữ tuổi trẻ đầy mộng mơ và lấp lánh, bạn có bao giờ nhìn thấy vết thương cào xước năm tháng hồn nhiên của mình? Vấp ngã giữa công việc đầy biến động, đập vỡ tình yêu trong bàn tay, hay đơn giản một ngày gục ngã vì tổn thương trán ứa những gì ta có thể chịu đựng.';
+        $book->image = 'image\book\vanhoc\ta-co-bi-quan-khong_71301_1.png';
+        $book->price = '55000';
+        $book->quantity = 30;
+        $book->authorID = App\Author::inRandomOrder()->first()->id;
+        $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
+        $book->categoryID = 4;
+        $book->save();
+
+        $book = new \App\Book();
+        $book->title = 'Thương Mấy Cũng Là Người Dưng';
+        $book->summary = 'Thương mấy cũng là người dưng được tác giả viết “trong những ngày tủi thân nhất của thanh xuân mình. Cái quãng đời đã bước qua đủ nhiều cuộc yêu để tự thấy mình không còn dư dả tuổi trẻ, niềm tin và tình thương để phung phí; thành ra chỉ muốn nắm thật chặt bàn tay của người bên cạnh, bình bình đạm đạm đi đến cuối. Nhưng thế sự tuyệt đối khó toại lòng người, và chân tình ở đời hiếm khi buộc ràng trong khái niệm vĩnh viễn như mình mong đợi. Bởi nên, mọi tủi buồn của tuổi trẻ, chung quy cũng vì hai chữ hết yêu”.';
+        $book->image = 'image\book\vanhoc\thuong-may-cung-la-nguoi-dung-_50645_1.jpg';
+        $book->price = '50000';
+        $book->quantity = 30;
+        $book->authorID = App\Author::inRandomOrder()->first()->id;
+        $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
+        $book->categoryID = 4;
+        $book->save();
+
+        $book = new \App\Book();
+        $book->title = 'Van Gogh';
+        $book->summary = 'Cuốn sách, mà ta có thể đọc say mê như một tiểu thuyết, kể lại, với những chi tiết không giải thích gì mà nói lên tất cả, quá trình từ bỏ con đường giáo sĩ để tận hiến cho hội họa của Vincent, tiến diễn hội họa của ông, tình anh em cảm động đến xót xa giữa Vincent và Théo, mối quan hệ đầy khúc mắc với Gauguin, những cơn bệnh tâm thần, những ảo giác, thời kỳ điều trị nội trú ở bệnh viện Saint-Rémy và cuối cùng, phát súng tự bắn vào ngực giữa cánh đồng lúa mì một chiều tháng 7 năm 1890, mặc dù không một khẩu súng nào được tìm thấy ở hiện trường.';
+        $book->image = 'image\book\vanhoc\van-gogh_75252_1.gif';
+        $book->price = '50000';
+        $book->quantity = 30;
+        $book->authorID = App\Author::inRandomOrder()->first()->id;
+        $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
+        $book->categoryID = 4;
+        $book->save();
+
+        $book = new \App\Book();
+        $book->title = 'Vua Gia Long Và Người Pháp';
+        $book->summary = '“Lịch sử là một khoa học luôn chỉnh sửa lại mình trên cơ sở những phát hiện mới của khảo cổ, hoặc từ những tư liệu lịch sử bị lãng quên, bị thất lạc, bị che giấu vì những lý do xã hội nào đó, tới nay mới có điều kiện lộ sáng.';
+        $book->image = 'image\book\vanhoc\vua-gia-long-va-nguoi-phap_66347_1.jpg';
+        $book->price = '50000';
+        $book->quantity = 30;
+        $book->authorID = App\Author::inRandomOrder()->first()->id;
+        $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
+        $book->categoryID = 4;
+        $book->save();
+
+        $book = new \App\Book();
+        $book->title = 'Xuân Yến';
+        $book->summary = 'Một phụ nữ tha hương đang hoài niệm trong thế giới thực. Một cô gái trẻ hình thành trong tưởng tượng hư ảo. Hai người xa lạ, sinh sống ở những không gian thời gian tách biệt, không hề hay biết đến sự tồn tại của nhau, đã luân phiên bước qua cuốn sách này, để đến cuối cùng, tương phùng tương ngộ nhờ ngòi bút của một người đàn bà viết.';
+        $book->image = 'image\book\vanhoc\xuan-yen-_50754_1.jpg';
+        $book->price = '91000';
+        $book->quantity = 30;
+        $book->authorID = App\Author::inRandomOrder()->first()->id;
+        $book->publisherID = App\Publisher::inRandomOrder()->first()->id;
+        $book->categoryID = 4;
+        $book->save();
     }
 }
