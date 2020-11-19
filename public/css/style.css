@@ -44,26 +44,28 @@ body {
 	background: #FFF;
 }
 .headertop_desc{
-	padding:20px 0;
+	padding:5px 0;
 	border-bottom:1px solid #EEE;
 }
 .call{
 	float:left;
     padding-top: 20px;
+    padding-left: 20px;
 }
-.call p{
+.call a{
 	font-size:0.9em;
 	color:#9C9C9C;
+    text-decoration: none;
 }
-.call p span{
+.call a span{
 	color:#303030;
 	font-size:1em;
 	font-weight:bold;
 }
-.call p span.number{
-	color:#E4292F;
+.call a span.number{
 	font-size:1em;
 	letter-spacing:1px;
+    padding-left: 10px;
 }
 .account_desc{
 	float:right;
@@ -231,7 +233,7 @@ body {
 .search_box form input[type="submit"] {
 	border: none;
 	cursor: pointer;
-	/*background: url(../images/search.png) no-repeat 0px 7px;*/
+	background: url(../images/search.png) no-repeat 0 4px;
 	position: absolute;
 	right: 0;
 	width: 20px;
@@ -239,6 +241,7 @@ body {
 }
 .header_slide{
 	margin-top:10px;
+    font-size: 100%;
 }
 .header_bottom_left{
 	float:left;
@@ -281,6 +284,7 @@ body {
 .content {
 	padding: 20px 0;
 	background: #FFF;
+    font-size: 62.5%;
 }
 .content h2 {
 	color: #383838;
@@ -318,7 +322,7 @@ body {
 }
 .see p a{
 	display: inline;
-	font-size: 0.8125em;
+	font-size: 1.25em;
 	color: #333;
 	/*background: url(../images/list-img.png) no-repeat right 3px;*/
     padding:0px 12px 0px 0px;
@@ -336,11 +340,8 @@ body {
 	-moz-box-shadow: 0px 0px 3px rgb(150, 150, 150);
 	-o-box-shadow: 0px 0px 3px rgb(150, 150, 150);
 }
-.grid_1_of_4:first-child {
-	margin-left: 0;
-}
 .images_1_of_4 {
-	width: 20.8%;
+	width: 23%;
 	padding: 1.5%;
 	text-align: center;
 	position: relative;
@@ -353,6 +354,7 @@ body {
 	font-family: 'ambleregular';
 	font-size:1.1em;
 	font-weight: normal;
+    padding-top: 10px;
 }
 .images_1_of_4  p {
 	font-size: 0.8125em;
@@ -373,7 +375,7 @@ body {
 	padding-top: 5px;
 }
 .price-details p span.rupees{
-	font-size:1.6em;
+	font-size:2em;
 	font-family: 'ambleregular';
 	color:#383838;
 }
@@ -601,6 +603,7 @@ body {
 }
 .images_3_of_2  img {
 	max-width: 100%;
+    width: 300px;
 }
 .span_3_of_2  h2 {
 	font-family: 'ambleregular';
@@ -1923,4 +1926,10 @@ body {
 	.signup input[type="submit"] {
 		width: 80px;
 	}
+}
+
+.qty {
+    background-color: white;
+    top: -6px;
+    position: relative;
 }

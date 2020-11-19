@@ -1,4 +1,7 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/js/app.js": "/js/app.js?id=201f562f17b5ceef561b",
+    "/css/app.css": "/css/app.css?id=357ee004647148ada580",
+    "/js/app.min.js": "/js/app.min.js?id=201f562f17b5ceef561b",
+    "/admin/css/bootstrap.min.css": "/admin/css/bootstrap.min.css?id=b02604058889da17a92e",
+    "/css/all.css": "/css/all.css?id=b02604058889da17a92e"
 }
