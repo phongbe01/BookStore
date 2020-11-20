@@ -6,7 +6,7 @@
         <a href="tel:0866688124"><i class="fas fa-mobile-alt"></i> <span class="number">+84-8666-88124</span></a>
     </div>
     <div class="cart">
-        <i class="fas fa-shopping-cart"><span id="total" class="badge qty">{{Session::has('cart') ? Session::get('cart')->totalQty : 0}}</span></i>
+        <a href="{{route('cart.index')}}" style="color: red"><i class="fas fa-shopping-cart"><span id="total" class="badge qty">{{Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span></i></a>
     </div>
     <div class="account_desc">
         <ul class="">

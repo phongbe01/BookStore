@@ -8,7 +8,7 @@
 }
 
 .login-background {
-    background: url(../image/Bookstore-1801_749.jpg);
+    background: url(../image/Bookstore-1801_749.jpg) no-repeat;
     min-height: 100vh;
     display: flex;
 }

@@ -59,15 +59,15 @@ class Cart
             if (array_key_exists($id, $itemsIntoCart)) {
                 $itemUpdate = $itemsIntoCart[$id];
                 //update tong so luong san pham trong gio hang
-                $qtyUpdate = $request->qty - $itemUpdate['qty'];
+                $qtyUpdate = $request['qty'] - $itemUpdate['qty'];
                 $this->totalQty += $qtyUpdate;
                 //update tong gia cua gio hang
-                $priceUpdate = $itemUpdate['item']->price * $request->qty - $itemUpdate['price'];
+                $priceUpdate = $itemUpdate['item']->price * $request['qty']- $itemUpdate['price'];
                 $this->totalPrice += $priceUpdate;
                 //update so luong san pham do
-                $itemUpdate['qty'] = $request->qty;
+                $itemUpdate['qty'] = $request['qty'];
                 //update tong gia cua san pham do
-                $itemUpdate['price'] = $itemUpdate['item']->price * $request->qty;
+                $itemUpdate['price'] = $itemUpdate['item']->price * $request['qty'];
                 $this->items[$id] = $itemUpdate;
             }
         }

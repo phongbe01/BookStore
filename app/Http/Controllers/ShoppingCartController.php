@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Repository\CartRepository;
+use http\Env\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -18,8 +19,9 @@ class ShoppingCartController extends Controller
 
     public function index()
     {
-        $cart = $this->cartRepository->index();
-//        return view('template.cart.shopping-cart', compact('cart'));
+        $carts = $this->cartRepository->index();
+//        dd($carts);
+        return view('cart.index', compact('carts'));
     }
 
     public function addToCart(Request $request, $productId)
@@ -32,13 +34,18 @@ class ShoppingCartController extends Controller
     public function removeProductIntoCart($productId)
     {
         $this->cartRepository->removeProductIntoCart($productId);
-        return redirect()->back();
+        $total = $this->cartRepository->index()->totalQty;
+        return response()->json(['status' => 200, 'total' => $total]);
     }
 
     public function updateProductIntoCart(Request $request, $productId)
     {
-        $this->cartRepository->updateProductIntoCart($request,$productId);
-        return redirect()->back();
+        $param = $request->get('param');
+        $this->cartRepository->updateProductIntoCart($param,$productId);
+//        return redirect()->back();
+        $total = $this->cartRepository->index()->totalQty;
+        return response()->json(['total' => $total]);
+
     }
 
     public function back()

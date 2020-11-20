@@ -40,7 +40,6 @@
             </div>
             <div class="clear"></div>
         </div>
-        l
         <div class="section group">
             <div class="grid_1_of_4 images_1_of_4">
                 <a href="preview.html"><img src="image/book/thieunhi/nuoc-co-hoa_106191_1.png" alt=""/></a>

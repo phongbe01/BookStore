@@ -26,7 +26,7 @@
                 <div id="mover">
                     <div id="slide-1" class="slide">
                         <div class="slider-img">
-                            <a href="preview.html"><img src="image/sach-kinh-te.png"
+                            <a href="preview.html"><img src="{{asset('image/sach-kinh-te.png')}}"
                                                         style="width: 350px;height: 420px;"
                                                         alt="learn more"/></a>
                         </div>
@@ -50,7 +50,7 @@
                             <a href="preview.html" class="button">Mua ngay</a>
                         </div>
                         <div class="slider-img">
-                            <a href="preview.html"><img src="image/vh-vtp-truyen-ngan-nho.jpg"
+                            <a href="preview.html"><img src="{{asset('image/vh-vtp-truyen-ngan-nho.jpg')}}"
                                                         alt="learn more"
                                                         style="width: 350px;height: 420px;"/></a>
                         </div>
@@ -58,7 +58,7 @@
                     </div>
                     <div class="slide">
                         <div class="slider-img">
-                            <a href="preview.html"><img src="image/doremon.jpg" alt="learn more"
+                            <a href="preview.html"><img src="{{asset('image/doremon.jpg')}}" alt="learn more"
                                                         style="width: 400px;height: 420px;"/></a>
                         </div>
                         <div class="slider-text">
