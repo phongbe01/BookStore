@@ -410,6 +410,4 @@ $(document).ready(function () {
             }
         });
     });
-
-
 })

@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Repository\CartRepository;
-use http\Env\Response;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
 
 class ShoppingCartController extends Controller
 {
@@ -20,7 +18,6 @@ class ShoppingCartController extends Controller
     public function index()
     {
         $carts = $this->cartRepository->index();
-//        dd($carts);
         return view('cart.index', compact('carts'));
     }
 
@@ -34,17 +31,19 @@ class ShoppingCartController extends Controller
     public function removeProductIntoCart($productId)
     {
         $this->cartRepository->removeProductIntoCart($productId);
-        $total = $this->cartRepository->index()->totalQty;
-        return response()->json(['status' => 200, 'total' => $total]);
+        $carts = $this->cartRepository->index();
+        $total = $carts->totalQty;
+        $html = view('cart.empty', compact('carts'))->render();
+        return response()->json(['html' => $html, 'total' => $total]);
     }
 
     public function updateProductIntoCart(Request $request, $productId)
     {
         $param = $request->get('param');
         $this->cartRepository->updateProductIntoCart($param,$productId);
-//        return redirect()->back();
-        $total = $this->cartRepository->index()->totalQty;
-        return response()->json(['total' => $total]);
+        $totalQty = $this->cartRepository->index()->totalQty;
+        $totalPrice = $this->cartRepository->index()->totalPrice;
+        return response()->json(['status' => 200, 'totalQty' => $totalQty, 'totalPrice' => $totalPrice]);
 
     }
 

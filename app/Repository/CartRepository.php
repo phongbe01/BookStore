@@ -33,7 +33,7 @@ class CartRepository
         $cart->add($product, $product->id,$itemQty);
         //luu du lieu gio hang vao session
         Session::put('cart', $cart);
-        Session::flash('success', 'Thêm sản phẩm khỏi giỏ hàng thành công');
+        Session::flash('success', 'Thêm sản phẩm vào giỏ hàng thành công');
 
     }
 
@@ -48,6 +48,7 @@ class CartRepository
                 Session::put('cart', $cart);
                 Session::flash('success', 'Xóa sản phẩm khỏi giỏ hàng thành công');
             } else {
+                $cart = null;
                 Session::flash('delete_error', 'Bạn chưa mua sản phẩm nào');
             }
         } else {

@@ -1,8 +1,6 @@
 $(document).ready(function () {
     //create new publisher
     create();
-
-
     function drawTable(arr) {
         $('.data-table-body').empty('');
         let publisher_data = '';

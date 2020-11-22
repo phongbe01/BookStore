@@ -17,9 +17,9 @@
                             </button>
                             <button type="button" class="btn "><i class="fas fa-upload mr-1"></i>Nhập
                             </button>
-                            <button type="button" class="btn "><i class="fas fa-download mr-1"></i>Xuất
+                            <a href="{{route('export')}}" class="btn "><i class="fas fa-download mr-1"></i>Xuất
                                 Excel
-                            </button>
+                            </a>
                             <button type="button" class="btn btn-cog"><i
                                     class="fas fa-cog mr-1"></i>Tùy chỉnh
                             </button>

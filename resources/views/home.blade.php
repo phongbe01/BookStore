@@ -4,10 +4,10 @@
     <div class="content">
         <div class="content_top">
             <div class="heading">
-                <h3>Sản phẩm mới</h3>
+                <h3>Sách kinh tế</h3>
             </div>
             <div class="see">
-                <p><a href="#">Xem tất cả</a></p>
+                <p><a href="{{route('products.listByCategory', 2)}}">Xem tất cả</a></p>
             </div>
             <div class="clear"></div>
         </div>
@@ -99,6 +99,7 @@
         function addToCart(id) {
             $.get('add-to-cart/' + id, function (data) {
                 $('#total').text(data.total);
+                alert("Thêm vào giỏ hàng thành công");
             })
         }
 
@@ -106,7 +107,7 @@
             // $().UItoTop({easingType: 'easeOutQuart'});
             $.ajaxSetup({
                 headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-toke n"]').attr('content')
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
 

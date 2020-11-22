@@ -46,7 +46,7 @@ class BookRepository implements CommonRepository
             ->leftJoin('authors', 'authors.id', '=', 'authorID')
             ->leftJoin('publishers', 'publishers.id', '=', 'publisherID')
             ->leftJoin('categories', 'categories.id', '=', 'categoryID')
-            ->select('books.id', 'books.title', 'books.summary', 'books.image', 'books.price', 'books.quantity', 'authors.authorname as author', 'publishers.publishname as publisher', 'categories.categoryname as category')
+            ->select('books.id', 'books.title', 'books.summary', 'books.image', 'books.price', 'books.quantity', 'authors.authorname as author', 'publishers.publishname as publisher', 'categories.categoryname as category, books.categoryID')
             ->where('books.categoryID', '=', '2')
             ->take(4)
             ->get();
@@ -117,5 +117,14 @@ class BookRepository implements CommonRepository
         $count = $result->count();
         $result->skip($pageNumber)->take($pageSize);
         return ['result' => $result->get(), 'count' => $count];
+    }
+
+    public function listByCategory($categoryID)
+    {
+        $result = DB::table('books')
+            ->leftJoin('categories', 'categories.id', '=', 'categoryID')
+            ->select('books.id', 'books.title', 'books.image', 'books.price', 'categories.categoryname as category')
+            ->where('books.categoryId','=', $categoryID);
+        return $result->get();
     }
 }

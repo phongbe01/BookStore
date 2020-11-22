@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Exports\UsersExport;
 use App\Repository\RoleRepository;
 use App\Repository\UserRepository;
 use App\Role;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Validator;
+use Maatwebsite\Excel\Facades\Excel;
 
 class UserController extends Controller
 {
@@ -136,5 +138,10 @@ class UserController extends Controller
         $users = $this->userRepository->list(10);
         $count = $this->userRepository->getCount();
         return response()->json(['success' => 'Xóa tài khoản thành công.', 'users' => $users, 'count' => $count,]);
+    }
+
+    public function export()
+    {
+        return Excel::download(new UsersExport, 'users.xlsx');
     }
 }

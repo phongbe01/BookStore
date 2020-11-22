@@ -257,13 +257,7 @@
                 <span class="icon"><i class="fas fa-user"></i></span>
                 <span class="title">Thông tin cá nhân</span>
             </a>
-        </li>
-        <li>
-            <a href="">
-                <span class="icon"><i class="fas fa-comment"></i></span>
-                <span class="title">Tin nhắn</span>
-            </a>
-        </li>
+        </li>2
         <li>
             <a href="">
                 <span class="icon"><i class="fas fa-cog"></i></span>
@@ -271,9 +265,15 @@
             </a>
         </li>
         <li>
+            <a href="{{route('orders.index')}}" >
+                <span class="icon"><i class="fas fa-table"></i></span>
+                <span class="title">Hóa đơn bán</span>
+            </a>
+        </li>
+        <li>
             <a href="{{route('users.index')}}" >
                 <span class="icon"><i class="fas fa-table"></i></span>
-                <span class="title">Bảng</span>
+                <span class="title">Tài khoản</span>
             </a>
         </li>
         <li>

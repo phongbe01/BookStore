@@ -3,20 +3,9 @@
         <div class="categories">
             <ul>
                 <h3>Thể loại</h3>
-                <li><a href="#">Chính trị</a></li>
-                <li><a href="#">Kinh tế</a></li>
-                <li><a href="#">Kĩ năng sống</a></li>
-                <li><a href="#">Thiếu nhi</a></li>
-                <li><a href="#">Tri thức</a></li>
-                <li><a href="#">Văn học</a></li>
-                <li><a href="#">Khoa học</a></li>
-                <li><a href="#">Truyện</a></li>
-                <li><a href="#">Tiểu thuyết</a></li>
-                <li><a href="#">Văn hóa xã hội</a></li>
-                <li><a href="#">Lịch sử</a></li>
-                <li><a href="#">Giáo trình</a></li>
-                <li><a href="#">Tâm lý</a></li>
-
+                @foreach($categories as $item)
+                    <li><a href="{{route('products.listByCategory', $item->id)}}" class="category-links" id="{{$item->id}}">{{$item->categoryname}}</a></li>
+                @endforeach
             </ul>
         </div>
     </div>

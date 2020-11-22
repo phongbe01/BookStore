@@ -1,27 +1,42 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Repository\BookRepository;
+use App\Http\Controllers\Controller;
+use App\Repository\OrderRepository;
+use App\Status;
 use Illuminate\Http\Request;
 
-class BookController extends Controller
+class OrdersController extends Controller
 {
-    private $bookRepository;
+    private $orderRepository;
 
-    public function __construct(BookRepository $bookRepository)
+    public function __construct(OrderRepository $orderRepository)
     {
-        $this->bookRepository = $bookRepository;
+        $this->orderRepository = $orderRepository;
     }
+
 
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
-        //
+        $orders = $this->orderRepository->getAll();
+        $statues = Status::all();
+        return view('admin.order.index', compact('orders', 'statues'));
+    }
+
+    public function filter(Request $request)
+    {
+        $params = $request->get('params');
+        $array = $this->orderRepository->filter($params);
+        $orders = $array['result'];
+        $count = $array['count'];
+        $html = view('admin.order.table', compact('orders'))->render();
+        return response()->json(['key' => $html, 'count' => $count]);
     }
 
     /**
@@ -49,12 +64,11 @@ class BookController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $book = $this->bookRepository->findById($id);
-        return view('frontend.book.detail', compact('book'));
+        //
     }
 
     /**

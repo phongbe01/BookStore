@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Repository\BookRepository;
 use Illuminate\Http\Request;
 
@@ -28,6 +29,7 @@ class HomeController extends Controller
     public function index()
     {
         $novels = $this->bookRepository->EconomicList();
-        return view('home', compact('novels'));
+        $categories = Category::all();
+        return view('home', compact('novels', 'categories'));
     }
 }
