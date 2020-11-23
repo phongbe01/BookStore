@@ -128,4 +128,23 @@ class OrderRepository
         $count = $result->count();
         return ['result' => $result->get(), 'count' => $count];
     }
+
+    public function filterOrderByStatus()
+    {
+        $color = DB::table('orders')
+            ->leftJoin('statuses', 'statuses.id', '=', 'orders.status')
+            ->select('statuses.color', 'orders.status', 'statuses.statusname as name', DB::raw('sum(orders.status) as sum'))
+            ->groupBy('statuses.color', 'orders.status', 'statuses.statusname')
+            ->get();
+        return $color;
+    }
+
+    public function totalOrderByMonth()
+    {
+        $month = DB::table('orders')
+            ->select(DB::raw('DATE_FORMAT(created_at, "%M") as month'), DB::raw('sum(orders.total) as sum'))
+            ->groupBy(DB::raw('DATE_FORMAT(created_at, "%M")'))
+            ->get();
+        return $month;
+    }
 }

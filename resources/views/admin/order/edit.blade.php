@@ -1,11 +1,17 @@
 @extends('admin.layouts.head')
 @section('content')
     <div style="padding: 20px; border: 1px solid lightgrey">
-        <div>
-            <p>Mã hóa đơn: {{$order->id}}</p>
+        <div class="order">
+            <p>Mã hóa đơn: <span id="orderID">{{$order->id}}</span></p>
             <p>Người mua: {{$order->name}}</p>
             <p>Ngày mua: {{$order->created_at}}</p>
-            <p>Tình trạng: <span class="badge badge-{{$order->color}}">{{$order->statusname}}</span></p>
+            <p>Tình trạng: <span class="badge badge-{{$order->color}}" id="status">{{$order->statusname}}</span>
+                <select  class="change-status" style="width: 20px">
+                    <option value="" selected></option>
+                    @foreach($statues as $status)
+                            <option class="badge badge-{{$status->color}}" value="{{$status->id}}" data-color="{{$status->color}}">{{$status->statusname}}</option>
+                    @endforeach
+                </select></p>
         </div>
         <div class=" border">
             <table id="cart" class="table" style="text-align: center">
@@ -45,4 +51,10 @@
             </a>
         </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+        });
+    </script>
 @endsection
