@@ -12,7 +12,8 @@
                 <div class="col-6 toolbar">
                     <div class="btn-toolbar btn-group" role="toolbar" style="float: right">
                         <div class="btn-group func mr-3" role="group" aria-label="First group">
-                            <button type="button" class="btn btn-plus " id="createNewUser" data-target="#ajaxModel"><i class="fas fa-plus" style="color: black"></i>
+                            <button type="button" class="btn btn-plus " id="createNewUser" data-target="#ajaxModel"><i
+                                    class="fas fa-plus" style="color: black"></i>
                             </button>
                             <button type="button" class="btn "><i class="fas fa-upload mr-1"></i>Nhập
                             </button>
@@ -49,10 +50,11 @@
                                                              id="column_name"></th>
                         <th class="email-column"></th>
                         <th class="role-column">
-                            <select  id="column_status" class="input-search data-filter">
+                            <select id="column_status" class="input-search data-filter">
                                 <option value="" selected></option>
                                 @foreach($statues as $status)
-                                    <option class="badge badge-{{$status->color}}" value="{{$status->id}}">{{$status->statusname}}</option>
+                                    <option class="badge badge-{{$status->color}}"
+                                            value="{{$status->id}}">{{$status->statusname}}</option>
                                 @endforeach
                             </select>
                         <th class="role-column"></th>
@@ -66,18 +68,19 @@
                         <tr class="data-row">
                             <td class="id-column" data-id="{{$order->id}}">{{$order->id}}</td>
                             <td class="action-column">
-                                <a href="{{route('orders.edit', $order->id)}}"><span class="fas fa-pencil-alt lv-data-table-edit form-edit"></span></a>
-                                <a href="javascript:void(0)"><span class="far fa-trash-alt lv-data-table-trash form-delete"></span></a>
+                                <a href="{{route('orders.edit', $order->id)}}"><span
+                                        class="fas fa-pencil-alt lv-data-table-edit form-edit"></span></a>
+                                <a href="javascript:void(0)"><span
+                                        class="far fa-trash-alt lv-data-table-trash form-delete"></span></a>
                             </td>
                             <td class="first-name-column">{{$order->name}}</td>
                             <td class="email-column">{{$order->address}}</td>
                             <td class="role-column">
-                                <select  class="data-filter badge badge-{{$order->color}} change-status">
-                                    <option value="{{$order->status}}" data-color="{{$status->color}}">{{$order->statusname}}</option>
+                                <span class="badge badge-{{$order->color}}" id="status" style="width: 90px">{{$order->statusname}}</span>
+                                <select class="change-status" style="width: 15px; border: none">
                                     @foreach($statues as $status)
-                                        @if($status->id != $order->status)
-                                            <option class="badge badge-{{$status->color}}" value="{{$status->id}}" data-color="{{$status->color}}">{{$status->statusname}}</option>
-                                        @endif
+                                        <option class="badge badge-{{$status->color}}" value="{{$status->id}}"
+                                                data-color="{{$status->color}}">{{$status->statusname}}</option>
                                     @endforeach
                                 </select>
                             </td>

@@ -2,6 +2,12 @@
 <html lang="en">
 <head>
     @include('layouts.main')
+    <style>
+        .error_message {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
 </head>
 <body style="margin-bottom: 0 !important;">
 <div class="app">
@@ -14,12 +20,16 @@
                 <div class="form-group-1">
                     <label for="email" class="form-label">Email</label>
                     <input id="email" name="email" type="text" placeholder="Nhập Email" class="form-control-1">
-                    <span class="form-message"></span>
+                    @error('email')
+                    <span class="error_message col-sm-12" id="error_title_name">{{$message}}</span>
+                    @enderror
                 </div>
                 <div class="form-group-1">
                     <label for="password" class="form-label">Mật khẩu</label>
                     <input id="password" name="password" type="password" placeholder="Nhập mật khẩu" class="form-control-1">
-                    <span class="form-message"></span>
+                    @error('password')
+                    <span class="error_message col-sm-12" id="error_title_name">{{$message}}</span>
+                    @enderror
                 </div>
                 <button class="form-submit">Đăng nhập</button>
                 <div class="form-group-1">
@@ -29,7 +39,7 @@
         </div>
     </div>
 </div>
-<script src="{{asset("js/validator.js")}}" defer></script>
+{{--<script src="{{asset("js/validator.js")}}" defer></script>--}}
 <script>
     document.addEventListener('DOMContentLoaded', function (e) {
         e.preventDefault();

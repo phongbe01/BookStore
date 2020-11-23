@@ -2,7 +2,7 @@
     <tr>
         <td class="id-column" data-id="{{$order->id}}">{{$order->id}}</td>
         <td class="action-column">
-            <a href="javascript:void(0)"><span class="fas fa-pencil-alt lv-data-table-edit form-edit"></span></a>
+            <a href="{{route('orders.edit', $order->id)}}"><span class="fas fa-pencil-alt lv-data-table-edit form-edit"></span></a>
             <a href="javascript:void(0)"><span class="far fa-trash-alt lv-data-table-trash form-delete"></span></a>
         </td>
         <td class="first-name-column">{{$order->name}}</td>

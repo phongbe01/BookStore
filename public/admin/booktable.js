@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
     // create();
 
@@ -176,7 +176,7 @@ $(document).ready(function() {
 
     $(document).on('click', '.form-delete', function () {
         let id = $(this).parents('tr').data('id');
-        confirm("Bạn có muốn xóa sách số " + id +" này?");
+        confirm("Bạn có muốn xóa sách số " + id + " này?");
         $.ajax({
             type: "DELETE",
             url: "books/" + id,
@@ -200,5 +200,4 @@ $(document).ready(function() {
             }
         });
     });
-
 });

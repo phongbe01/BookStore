@@ -36,7 +36,7 @@ class OrderRepository
     {
         $order = DB::table('orders')
             ->leftJoin('statuses', 'statuses.id', '=', 'orders.status')
-            ->select('orders.id', 'orders.userID', 'orders.total', 'orders.created_at', 'orders.name', 'orders.address', 'orders.phonenumber', 'statuses.statusname', 'statuses.color')
+            ->select('orders.id', 'orders.userID', 'orders.total', 'orders.created_at', 'orders.name', 'orders.address', 'orders.phonenumber', 'statuses.statusname', 'statuses.color', 'orders.status')
             ->where('orders.id', $id)
             ->first();
         return $order;
@@ -46,7 +46,7 @@ class OrderRepository
     {
         $color = DB::table('orders')
             ->leftJoin('statuses', 'statuses.id', '=', 'orders.status')
-            ->select('statuses.color')
+            ->select('statuses.color', 'statuses.statusname as name')
             ->where('orders.id', $id)
             ->first();
         return $color;

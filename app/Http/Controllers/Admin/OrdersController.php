@@ -91,8 +91,9 @@ class OrdersController extends Controller
     public function edit($id)
     {
         $order = $this->orderRepository->findById($id);
+        $statues = Status::all();
         $ordersDetail = $this->orderRepository->orderDetail($id);
-        return view('admin.order.edit', compact('order', 'ordersDetail'));
+        return view('admin.order.edit', compact('order', 'ordersDetail', 'statues'));
     }
 
     /**

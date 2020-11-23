@@ -4,7 +4,7 @@
         <div class="cont-desc">
             <div class="product-details row">
                 <div class="grid images_3_of_2 col-4">
-                    <a href="#" target="_blank"><img src="{{asset('/storage/' . $book->image)}}" alt=" " /></a>
+                    <a href="#" target="_blank"><img src="{{asset('/storage/' . $book->image)}}" alt=" "/></a>
                 </div>
                 <div class="desc span_3_of_2 col-7">
                     <h2>{{$book->title}}</h2>
@@ -26,7 +26,8 @@
                             </ul>
                         </div>
                         <div class="share-desc col-8">
-                            <div class="button"><h4><a href="" id="addToCart" data-id="{{$book->id}}">Thêm vào giỏ</a></h4></div>
+                            <div class="button"><h4><a href="" id="addToCart" data-id="{{$book->id}}">Thêm vào giỏ</a>
+                                </h4></div>
                             <div class="clear"></div>
                         </div>
                     </div>
@@ -38,48 +39,29 @@
                     <h3>Sản phẩm liên quan</h3>
                 </div>
                 <div class="see">
-                    <p><a href="#">Xem tất cả</a></p>
+                    <p><a href="{{route('products.listByCategory', $book->categoryID)}}">Xem tất cả</a></p>
                 </div>
                 <div class="clear"></div>
             </div>
             <div class="section group">
+                @foreach($books as $book)
+                    <div class="grid_1_of_4 images_1_of_4">
+                        <a href="{{route('products.show', $book->id)}}"><img src="{{asset('/storage/' . $book->image)}}"
+                                                                             alt="$novel->image"/></a>
+                        <h2>{{$book->title}}</h2>
+                        <div class="price-details">
+                            <div class="price-number">
+                                <p><span class="rupees">{{number_format($book->price)}}đ </span></p>
+                            </div>
+                            <div class="add-cart">
+                                <h4><a href="javascript:void(0)" class="add-to-cart" data-id="{{$book->id}}"
+                                       onclick="addToCart({{$book->id}})">Thêm vào giỏ</a></h4>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
 
-{{--                <div class="grid_1_of_4 images_1_of_4">--}}
-{{--                    <a href="#"><img src="image/conan.jpg" style="width: 400px;height: 250px;" alt=""></a>--}}
-{{--                    <div class="price" style="border:none">--}}
-{{--                        <div class="add-cart" style="float:none">--}}
-{{--                            <h4><a href="#">Thêm vào giỏ</a></h4>--}}
-{{--                        </div>--}}
-{{--                        <div class="clear"></div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="grid_1_of_4 images_1_of_4">--}}
-{{--                    <a href="#"><img src="image/conan.jpg" style="width: 400px;height: 250px;" alt=""></a>--}}
-{{--                    <div class="price" style="border:none">--}}
-{{--                        <div class="add-cart" style="float:none">--}}
-{{--                            <h4><a href="#">Thêm vào giỏ</a></h4>--}}
-{{--                        </div>--}}
-{{--                        <div class="clear"></div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="grid_1_of_4 images_1_of_4">--}}
-{{--                    <a href="#"><img src="image/conan.jpg" style="width: 400px;height: 250px;" alt=""></a>--}}
-{{--                    <div class="price" style="border:none">--}}
-{{--                        <div class="add-cart" style="float:none">--}}
-{{--                            <h4><a href="#">Thêm vào giỏ</a></h4>--}}
-{{--                        </div>--}}
-{{--                        <div class="clear"></div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="grid_1_of_4 images_1_of_4">--}}
-{{--                    <a href="#"><img src="image/conan.jpg" style="width: 400px;height: 250px;" alt=""></a>--}}
-{{--                    <div class="price" style="border:none">--}}
-{{--                        <div class="add-cart" style="float:none">--}}
-{{--                            <h4><a href="javascript:void(0)" id="addToCart">Thêm vào giỏ</a></h4>--}}
-{{--                        </div>--}}
-{{--                        <div class="clear"></div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>

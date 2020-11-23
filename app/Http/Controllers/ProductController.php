@@ -59,7 +59,8 @@ class ProductController extends Controller
     public function show($id)
     {
         $book = $this->bookRepository->findById($id);
-        return view('frontend.book.detail', compact('book'));
+        $books = $this->bookRepository->listByCategory($book->categoryID)->take(4);
+        return view('frontend.book.detail', compact('book', 'books'));
     }
 
     /**

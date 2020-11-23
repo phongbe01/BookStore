@@ -73,25 +73,26 @@ $(document).ready(function () {
             });
         }, 500);
     }
-
-    $(document).on('change', '.change-status', function (e) {
+    $(document).on('change' , '.change-status',function (e) {
         e.preventDefault();
         let row = $(this);
         let status = $(this).val();
         let color = $(this).find(':selected').attr('data-color');
-        let orderID = $(this).parents('.data-row').find('.id-column').text();
+        let span = $(this).parents('.data-row').find('#status');
+        let id = $(this).parents('.data-row').find('.id-column').attr('data-id');
         $.ajax({
             type: 'post',
             dataType: 'json',
             data: {
-                orderID: orderID,
+                orderID: id,
                 status: status,
             },
             url: '/admin/management/orders/change-status',
             success: function (data) {
-                console.log(data['color'])
-                console.log(row);
-                row.removeClass('badge-' + color).addClass('badge-' + data['color']);
+                console.log(data);
+                span.removeClass();
+                span.addClass('badge badge-' + data['color']);
+                span.text(data['name']);
             },
         });
     })
