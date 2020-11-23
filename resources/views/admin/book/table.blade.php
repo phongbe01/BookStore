@@ -1,7 +1,7 @@
 @foreach($books as $book)
-    <tr>
+    <tr data-id="{{$book->id}}">
         <td class="action-column">
-            <a href="javascript:void(0)"><span
+            <a href="{{route('books.edit', $book->id)}}"><span
                     class="fas fa-pencil-alt lv-data-table-edit form-edit"></span></a>
             <a href="javascript:void(0)"><span
                     class="far fa-trash-alt lv-data-table-trash form-delete"></span></a>

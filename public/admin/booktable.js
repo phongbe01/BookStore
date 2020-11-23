@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    create();
+    // create();
 
     let first = 1;
     let last = 10;
@@ -49,7 +49,7 @@ $(document).ready(function() {
                 dataType: 'json',
                 data: {
                     params: array,
-                    pageSize: pageSize, 
+                    pageSize: pageSize,
                     pageNumber: 0,
                 },
                 url: '/admin/management/books/search',
@@ -174,16 +174,31 @@ $(document).ready(function() {
         });
     })
 
-    function create()
-    {
-        $(document).on('click', '#createNewBook', function (e) {
-            $.get("books/create", function (data) {
-                let body = $('body');
-                body.html(data);
-                window.history.pushState("Details", "Title", "books/create");
-                // let form = $('#book-ajaxModel');
-                // form.modal('show');
-            })
-        })
-    }
+    $(document).on('click', '.form-delete', function () {
+        let id = $(this).parents('tr').data('id');
+        confirm("Bạn có muốn xóa sách số " + id +" này?");
+        $.ajax({
+            type: "DELETE",
+            url: "books/" + id,
+            success: function (data) {
+                if ($.isEmptyObject(data.error)) {
+                    let body = $('.data-table-body');
+                    body.html('');
+                    body.append(data.table);
+                    let total = data.count;
+                    $('#pageSize').val(10);
+                    $('#first').text(1);
+                    $('#last').text(10);
+                    pageNumber = 0;
+                    alertMessage('success', data.success);
+                } else {
+                    alertMessage('error', data.error);
+                }
+            },
+            error: function (data) {
+                console.log('Error:', data);
+            }
+        });
+    });
+
 });

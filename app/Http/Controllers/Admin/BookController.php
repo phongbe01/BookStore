@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Publisher;
 use App\Repository\AuthorRepository;
 use App\Repository\BookRepository;
+use App\Repository\CategoryRepository;
 use App\Repository\PublisherRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BookController extends Controller
 {
@@ -16,11 +18,12 @@ class BookController extends Controller
     private $publisherRepository;
     private $categoryRepository;
 
-    public function __construct(BookRepository $bookRepository, AuthorRepository $authorRepository, PublisherRepository $publisherRepository)
+    public function __construct(BookRepository $bookRepository, AuthorRepository $authorRepository, PublisherRepository $publisherRepository, CategoryRepository $categoryRepository)
     {
         $this->bookRepository = $bookRepository;
         $this->authorRepository = $authorRepository;
         $this->publisherRepository = $publisherRepository;
+        $this->categoryRepository = $categoryRepository;
     }
 
     /**
@@ -34,7 +37,8 @@ class BookController extends Controller
         $count = $this->bookRepository->count();
         $publishers = $this->publisherRepository->list(10);
         $authors = $this->authorRepository->list(100);
-        return view('admin.book.index', compact('count', 'books', 'publishers', 'authors'));
+        $categories = $this->categoryRepository->list();
+        return view('admin.book.index', compact('count', 'books', 'publishers', 'authors', 'categories'));
     }
 
     public function search(Request $request)
@@ -54,12 +58,15 @@ class BookController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\JsonResponse
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create()
     {
-        $html =  view('admin.book.create')->render();
-        return response()->json($html);
+        $authors = $this->authorRepository->list(1);
+        $publishers = $this->publisherRepository->list();
+        $categories = $this->categoryRepository->list();
+        return  view('admin.book.create', compact('authors', 'publishers', 'categories'));
+//        return response()->json($html);
 
     }
 
@@ -67,11 +74,20 @@ class BookController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'authorID' => 'required',
+            'publisherID' => 'required',
+            'categoryID' => 'required',
+            'quantity' => 'required|numeric',
+            'price' => 'required | numeric',
+        ]);
+        $this->bookRepository->create($request);
+        return redirect()->route('books.index');
     }
 
     /**
@@ -82,18 +98,22 @@ class BookController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit($id)
     {
-        //
+        $book = $this->bookRepository->findById($id);
+        $publishers = $this->publisherRepository->list(10);
+        $authors = $this->authorRepository->list(100);
+        $categories = $this->categoryRepository->list();
+        return view('admin.book.edit', compact('book', 'publishers', 'authors', 'categories'));
     }
 
     /**
@@ -101,21 +121,26 @@ class BookController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, $id)
     {
-        //
+//        dd($request->all());
+        $this->bookRepository->update($request, $id);
+        return redirect()->route('books.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function destroy($id)
     {
-        //
+        $this->bookRepository->delete($id);
+        $books = $this->bookRepository->list(10);
+        $html = view('admin.book.table', compact('books'))->render();
+        return response()->json(['html' => $html, 'count' => count($books)]);
     }
 }

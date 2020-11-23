@@ -52,7 +52,7 @@
                             <select  id="column_status" class="input-search data-filter">
                                 <option value="" selected></option>
                                 @foreach($statues as $status)
-                                    <option value="{{$status->id}}">{{$status->statusname}}</option>
+                                    <option class="badge badge-{{$status->color}}" value="{{$status->id}}">{{$status->statusname}}</option>
                                 @endforeach
                             </select>
                         <th class="role-column"></th>
@@ -63,15 +63,24 @@
                     <tbody class="data-table-body">
                     {{--                        <div class="loading-table" style="display: none"></div>--}}
                     @foreach($orders as $order)
-                        <tr>
+                        <tr class="data-row">
                             <td class="id-column" data-id="{{$order->id}}">{{$order->id}}</td>
                             <td class="action-column">
-                                <a href="javascript:void(0)"><span class="fas fa-pencil-alt lv-data-table-edit form-edit"></span></a>
+                                <a href="{{route('orders.edit', $order->id)}}"><span class="fas fa-pencil-alt lv-data-table-edit form-edit"></span></a>
                                 <a href="javascript:void(0)"><span class="far fa-trash-alt lv-data-table-trash form-delete"></span></a>
                             </td>
                             <td class="first-name-column">{{$order->name}}</td>
                             <td class="email-column">{{$order->address}}</td>
-                            <td class="role-column"><span class="badge badge-{{$order->color}}">{{$order->statusname}}</span></td>
+                            <td class="role-column">
+                                <select  class="data-filter badge badge-{{$order->color}} change-status">
+                                    <option value="{{$order->status}}" data-color="{{$status->color}}">{{$order->statusname}}</option>
+                                    @foreach($statues as $status)
+                                        @if($status->id != $order->status)
+                                            <option class="badge badge-{{$status->color}}" value="{{$status->id}}" data-color="{{$status->color}}">{{$status->statusname}}</option>
+                                        @endif
+                                    @endforeach
+                                </select>
+                            </td>
                             <td class="role-column">{{number_format($order->total)}}đ</td>
                             <td class="email-column">{{$order->created_at}}</td>
                         </tr>

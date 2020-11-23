@@ -56,7 +56,14 @@ class BookRepository implements CommonRepository
     public function findById($id)
     {
         // TODO: Implement findById() method.
-        return Book::findOrFail($id);
+        $result = DB::table('books')
+            ->leftJoin('authors', 'authors.id', '=', 'authorID')
+            ->leftJoin('publishers', 'publishers.id', '=', 'publisherID')
+            ->leftJoin('categories', 'categories.id', '=', 'categoryID')
+            ->select('books.id', 'books.title', 'books.summary', 'books.image', 'books.price', 'books.quantity', 'authors.authorname as author', 'publishers.publishname as publisher', 'categories.categoryname as category')
+            ->where('books.id', '=', $id)
+            ->first();
+        return $result;
     }
 
     public function create($request)
@@ -68,9 +75,9 @@ class BookRepository implements CommonRepository
         $book->image = $request->file->store('/image/book', 'public');
         $book->price = $request->price;
         $book->quantity = $request->quantity;
-        $book->authorID = $request->author;
-        $book->publisherID = $request->publisher;
-        $book->categoryID = $request->category;
+        $book->authorID = $request->authorID;
+        $book->publisherID = $request->publisherID;
+        $book->categoryID = $request->categoryID;
         $book->save();
 
     }
@@ -78,22 +85,21 @@ class BookRepository implements CommonRepository
     public function update($request, $id)
     {
         // TODO: Implement update() method.
-        $book = $this->findById($id);
+        $book = Book::findOrFail($id);
         $book->title = $request->title;
         $book->summary = $request->summary;
-        $book->image = $request->file->store('/image/book', 'public');
         $book->price = $request->price;
         $book->quantity = $request->quantity;
-        $book->authorID = $request->author;
-        $book->publisherID = $request->publisher;
-        $book->categoryID = $request->category;
+        $book->authorID = $request->authorID;
+        $book->publisherID = $request->publisherID;
+        $book->categoryID = $request->categoryID;
         $book->save();
     }
 
     public function delete($id)
     {
         // TODO: Implement delete() method.
-        $book = $this->findById($id);
+        $book = Book::findOrFail($id);
         $book->delete();
     }
 

@@ -12,8 +12,8 @@
                 <div class="col-6 toolbar">
                     <div class="btn-toolbar btn-group" role="toolbar" style="float: right">
                         <div class="btn-group func mr-3" role="group" aria-label="First group">
-                            <button type="button" class="btn btn-plus " id="createNewBook"><i class="fas fa-plus" style="color: black"></i>
-                            </button>
+                            <a type="button" class="btn btn-plus " id="createNewBook" href="{{route('books.create')}}"><i class="fas fa-plus" style="color: black"></i>
+                            </a>
                             <button type="button" class="btn "><i class="fas fa-upload mr-1"></i>Nhập
                             </button>
                             <button type="button" class="btn "><i class="fas fa-download mr-1"></i>Xuất
@@ -37,7 +37,7 @@
                 <div class="table-wrap">
                     <table class="data-table">
                         <thead class="data-table-head">
-                        <tr style="display: flex; align-items: center">
+                        <tr style="display: flex; align-items: center" >
                             <th class="action-column">Hành động</th>
                             <th class="publisher-name-column">Tên sách</th>
                             <th class="id-column">Giá</th>
@@ -75,23 +75,27 @@
                                 </select>
                             </th>
                             <th class="publisher-name-column">
-                                <input type="text" class="input-search data-filter "
-                                       id="column_category">
+                                <select  id="column_categoryID" class="input-search data-filter">
+                                    <option value="" selected></option>
+                                    @foreach($categories as $category)
+                                        <option value="{{$category->id}}">{{$category->categoryname}}</option>
+                                    @endforeach
+                                </select>
                             </th>
                         </tr>
                         </thead>
                         <tbody class="data-table-body">
 {{--                        <div class="loading-table" style="display: none"></div>--}}
                         @foreach($books as $book)
-                            <tr>
+                            <tr data-id="{{$book->id}}">
                                 <td class="action-column">
-                                    <a href="javascript:void(0)"><span
+                                    <a href="{{route('books.edit', $book->id)}}"><span
                                             class="fas fa-pencil-alt lv-data-table-edit form-edit"></span></a>
                                     <a href="javascript:void(0)"><span
                                             class="far fa-trash-alt lv-data-table-trash form-delete"></span></a>
                                 </td>
                                 <td class="publisher-name-column">{{$book->title}}</td>
-                                <td class="id-column">{{$book->price}}</td>
+                                <td class="id-column">{{number_format($book->price)}}</td>
                                 <td class="id-column">{{$book->quantity}}</td>
                                 <td class="publisher-name-column">{{$book->author}}</td>
                                 <td class="publisher-name-column">{{$book->publisher}}</td>

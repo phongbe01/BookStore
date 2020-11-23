@@ -40,7 +40,9 @@ Route::group(['middleware' => ['auth'], 'namespace' => 'Admin', 'prefix' => 'adm
     Route::post('/books/search', 'BookController@search')->name('books.search');
     Route::resource('/books', 'BookController');
 
+
     Route::post('/orders/search', 'OrdersController@filter')->name('orders.search');
+    Route::post('/orders/change-status', 'OrdersController@changeOrderStatus')->name('orders.changeStatus');
     Route::resource('/orders', 'OrdersController');
 
 });
@@ -52,7 +54,7 @@ Route::get('/update-cart/{id}','ShoppingCartController@updateProductIntoCart')->
 Route::get('/remove-cart/{id}','ShoppingCartController@removeProductIntoCart')->name('cart.removeIntoCart');
 
 //Order
-Route::post('/orders', 'OrderController@store')->name('orders.store');
+Route::post('/orders', 'OrderController@store')->name('bill.store');
 
 Route::get('/user-list', 'UserController@getBills')->name('users.listBill');
 Route::get('/user-order-detail/{id}', 'UserController@getBillDetail')->name('users.billDetail');

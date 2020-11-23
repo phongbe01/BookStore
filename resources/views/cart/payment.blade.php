@@ -44,7 +44,7 @@
             </div>
             <div class="col-5" style="border: 1px solid lightgrey;padding: 10px;">
                 <h2 style="font-size: 22px;font-family: 'ambleregular'">Địa chỉ giao hàng </h2><hr>
-                <form action="{{route('orders.store')}}" method="post" id="orderForm">
+                <form action="{{route('bill.store')}}" method="post" id="orderForm">
                      @csrf
                     <div class="form-group">
                         <label style="font-size: 14px;">Họ và tên người nhận<span style="color: red">*</span></label>

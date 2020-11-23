@@ -39,8 +39,8 @@
                         <thead class="data-table-head">
                         <tr style="display: flex; align-items: center">
                             <th class="id-column">ID</th>
-                            <th class="action-column">Action</th>
-                            <th class="publisher-name-column">Name</th>
+                            <th class="action-column">Hành động</th>
+                            <th class="publisher-name-column">Tên tác giả</th>
                         </tr>
                         <tr>
                             <th class="id-column"></th>

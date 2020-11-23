@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Order;
 use App\Repository\OrderRepository;
 use App\Status;
 use Illuminate\Http\Request;
@@ -37,6 +38,16 @@ class OrdersController extends Controller
         $count = $array['count'];
         $html = view('admin.order.table', compact('orders'))->render();
         return response()->json(['key' => $html, 'count' => $count]);
+    }
+
+    public function changeOrderStatus(Request $request)
+    {
+        $statusCode = $request->get('status');
+        $id = $request->get('orderID');
+        $order = Order::findOrFail($id);
+        $order->status = $statusCode;
+        $order->save();
+        return response()->json($this->orderRepository->changeStatusId($id));
     }
 
     /**
@@ -75,11 +86,13 @@ class OrdersController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit($id)
     {
-        //
+        $order = $this->orderRepository->findById($id);
+        $ordersDetail = $this->orderRepository->orderDetail($id);
+        return view('admin.order.edit', compact('order', 'ordersDetail'));
     }
 
     /**
@@ -104,4 +117,6 @@ class OrdersController extends Controller
     {
         //
     }
+
+
 }

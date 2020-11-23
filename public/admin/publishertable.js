@@ -12,7 +12,6 @@ $(document).ready(function () {
         {
             let reader = new FileReader();
             reader.onload = function (e) {
-                console.log(e.target.result);
                 $('#publisherForm').find('#showImage').attr('src', e.target.result);
             }
             reader.readAsDataURL(input.files[0]);

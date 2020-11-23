@@ -18,7 +18,7 @@ class OrderRepository
     {
         $orders = DB::table('orders')
             ->leftJoin('statuses', 'statuses.id', '=', 'orders.status')
-            ->select('orders.id', 'orders.userID', 'orders.total', 'orders.created_at', 'orders.name', 'orders.address', 'orders.phonenumber', 'statuses.statusname', 'statuses.color')
+            ->select('orders.id', 'orders.userID', 'orders.total', 'orders.created_at', 'orders.name', 'orders.address', 'orders.phonenumber', 'statuses.statusname', 'statuses.color', 'orders.status')
             ->get();
         return $orders;
     }
@@ -27,14 +27,29 @@ class OrderRepository
     {
         $detail = DB::table('ordersdetail')
             ->leftJoin('books', 'books.id', '=', 'ordersdetail.bookID')
-            ->select('books.title', 'books.image', 'ordersdetail.quantity', 'books.price')
+            ->select( 'books.title', 'books.image', 'ordersdetail.quantity', 'books.price')
             ->where('ordersdetail.ordercode', '=', $id);
         return $detail->get();
     }
 
     public function findById($id)
     {
-        return Order::find($id);
+        $order = DB::table('orders')
+            ->leftJoin('statuses', 'statuses.id', '=', 'orders.status')
+            ->select('orders.id', 'orders.userID', 'orders.total', 'orders.created_at', 'orders.name', 'orders.address', 'orders.phonenumber', 'statuses.statusname', 'statuses.color')
+            ->where('orders.id', $id)
+            ->first();
+        return $order;
+    }
+
+    public function changeStatusId($id)
+    {
+        $color = DB::table('orders')
+            ->leftJoin('statuses', 'statuses.id', '=', 'orders.status')
+            ->select('statuses.color')
+            ->where('orders.id', $id)
+            ->first();
+        return $color;
     }
 
     public function getBillId()
@@ -45,7 +60,6 @@ class OrderRepository
             if ($billId !== $bill->id) {
                 return $billId;
             }
-
             return 'request time out';
         }
 
